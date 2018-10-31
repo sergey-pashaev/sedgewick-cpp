@@ -9,6 +9,11 @@ function(ex NUMBER) # ARGN as list of sources
   add_executable("${BIN_NAME}" "${ARGN}")
 endfunction()
 
+function(program NUMBER) # ARGN as list of sources
+  set(BIN_NAME "program.${NUMBER}")
+  add_executable("${BIN_NAME}" "${ARGN}")
+endfunction()
+
 function(ex_testable NUMBER) # ARGN as list of sources
   set(BIN_NAME "ex.${NUMBER}")
   add_executable("${BIN_NAME}" "${ARGN}")
