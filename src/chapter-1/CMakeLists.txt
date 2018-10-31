@@ -11,3 +11,4 @@ program(1.4 program.1.4.cpp)
 
 resource(ex.1.4.md)
 resource(ex.1.5.md)
+resource(ex.1.6.md)
