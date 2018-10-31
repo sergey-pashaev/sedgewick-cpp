@@ -7,6 +7,7 @@ endif()
 program(1.1 program.1.1.cpp)
 program(1.2 program.1.2.cpp)
 program(1.3 program.1.3.cpp)
+program(1.4 program.1.4.cpp)
 
 resource(ex.1.4.md)
 resource(ex.1.5.md)
