@@ -5,6 +5,7 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
 endif()
 
 program(1.1 program.1.1.cpp)
+program(1.2 program.1.2.cpp)
 
 resource(ex.1.4.md)
 resource(ex.1.5.md)
