@@ -15,3 +15,8 @@ function(ex_testable NUMBER) # ARGN as list of sources
   target_link_libraries("${BIN_NAME}" catch2)
   add_test(NAME "${BIN_NAME}" COMMAND "${BIN_NAME}")
 endfunction()
+
+function(resource FILE)
+  configure_file("${FILE}" "${FILE}" COPYONLY)
+endfunction()
+
