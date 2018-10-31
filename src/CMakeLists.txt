@@ -20,3 +20,4 @@ function(resource FILE)
   configure_file("${FILE}" "${FILE}" COPYONLY)
 endfunction()
 
+add_subdirectory(chapter-1)
