@@ -4,5 +4,7 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
   cmake_policy(VERSION ${CMAKE_VERSION})
 endif()
 
+program(1.1 program.1.1.cpp)
+
 resource(ex.1.4.md)
 resource(ex.1.5.md)
