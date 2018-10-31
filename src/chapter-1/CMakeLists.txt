@@ -5,3 +5,4 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
 endif()
 
 resource(ex.1.4.md)
+resource(ex.1.5.md)
