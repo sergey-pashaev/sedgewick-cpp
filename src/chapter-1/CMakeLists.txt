@@ -4,6 +4,8 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
   cmake_policy(VERSION ${CMAKE_VERSION})
 endif()
 
+program(connectivity connectivity.cpp)
+
 program(1.1 program.1.1.cpp)
 program(1.2 program.1.2.cpp)
 program(1.3 program.1.3.cpp)
