@@ -18,6 +18,7 @@ resource(ex.1.9.md)
 resource(ex.1.10.md)
 resource(ex.1.11.md)
 resource(ex.1.17.md)
+resource(ex.1.25.md)
 
 ex(1.16 ex.1.16.cpp)
 ex(1.22 ex.1.22.cpp)
