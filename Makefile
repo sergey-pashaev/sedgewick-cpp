@@ -1,3 +1,5 @@
+.PHONY: test install-hooks
+
 all: exercises
 
 exercises:
