@@ -1,6 +1,7 @@
 // program.1.1
 
 // en: Quick-find solution to connectivity problem
+
 // ru: Решение задачи связности методом быстрого поиска
 
 #include <array>

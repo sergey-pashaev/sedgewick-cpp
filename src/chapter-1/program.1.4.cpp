@@ -1,6 +1,7 @@
 // program.1.4
 
 // en: Path compression by halving
+
 // ru: Сжатие пути делением пополам
 
 #include <array>

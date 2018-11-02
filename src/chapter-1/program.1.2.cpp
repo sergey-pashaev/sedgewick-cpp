@@ -1,6 +1,7 @@
 // program.1.2
 
 // en: Quick-union solution to connectivity problem
+
 // ru: Решение задачи связности методом быстрого объединения
 
 #include <array>

@@ -1,6 +1,7 @@
 // program.1.3
 
 // en: Weighted version of quick union
+
 // ru: Взвешенная версия быстрого объединения
 
 #include <array>
