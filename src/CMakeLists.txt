@@ -25,4 +25,11 @@ function(resource FILE)
   configure_file("${FILE}" "${FILE}" COPYONLY)
 endfunction()
 
+function(test PROGRAM TEST_NAME)
+  file(GLOB inputs ${CMAKE_SOURCE_DIR}/test/${TEST_NAME}.test*.in)
+  foreach(input ${inputs})
+    add_test(NAME "${PROGRAM}.${input}" COMMAND ${CMAKE_SOURCE_DIR}/test/test.sh ${CMAKE_CURRENT_BINARY_DIR}/${PROGRAM} ${input})
+  endforeach(input)
+endfunction()
+
 add_subdirectory(chapter-1)
