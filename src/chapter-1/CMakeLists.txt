@@ -21,6 +21,7 @@ resource(ex.1.17.md)
 
 ex(1.16 ex.1.16.cpp)
 ex(1.22 ex.1.22.cpp)
+ex(1.23 ex.1.23.cpp)
 
 test(program.1.1 chapter-1 program.1.1)
 test(program.1.2 chapter-1 program.1.1)
