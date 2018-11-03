@@ -12,6 +12,7 @@ ex(3.3 ex.3.3.cpp)
 ex(3.4 ex.3.4.cpp)
 ex(3.5 ex.3.5.cpp)
 ex(3.6 ex.3.6.cpp)
+ex(3.7 ex.3.7.cpp)
 
 test_runnable(ex.3.1)
 test_runnable(ex.3.2)
@@ -19,3 +20,5 @@ test_runnable(ex.3.3)
 test_runnable(ex.3.4)
 test_runnable(ex.3.5)
 test_runnable(ex.3.6)
+
+test(ex.3.7 chapter-3 ex.3.7)
