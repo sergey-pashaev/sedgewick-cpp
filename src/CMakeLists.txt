@@ -41,5 +41,9 @@ function(test PROGRAM CHAPTER TEST_NAME)
   endforeach(input)
 endfunction()
 
+function(test_runnable PROGRAM)
+  add_test(NAME "${PROGRAM}" COMMAND "${PROGRAM}")
+endfunction()
+
 add_subdirectory(chapter-1)
 add_subdirectory(chapter-3)

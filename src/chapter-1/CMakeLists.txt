@@ -33,3 +33,5 @@ test(program.1.2 chapter-1 program.1.1)
 test(program.1.3 chapter-1 program.1.1)
 test(program.1.4 chapter-1 program.1.1)
 test(ex.1.16 chapter-1 program.1.1)
+
+test_runnable(program.connectivity)
