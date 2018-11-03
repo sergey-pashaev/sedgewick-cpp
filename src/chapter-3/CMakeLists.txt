@@ -5,5 +5,7 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
 endif()
 
 ex(3.1 ex.3.1.cpp)
+ex(3.2 ex.3.2.cpp)
 
 test_runnable(ex.3.1)
+test_runnable(ex.3.2)
