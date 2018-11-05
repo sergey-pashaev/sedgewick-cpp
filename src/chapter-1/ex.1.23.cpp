@@ -12,6 +12,8 @@
 #include <iostream>
 #include <vector>
 
+#include <psv/cli_graph.h>
+
 int usage(const char* bin) {
     std::cout << "Usage: " << bin << " <positive int X> <positive int Y>\n";
     return 1;
@@ -64,25 +66,7 @@ int main(int argc, char* argv[]) {
         return usage(argv[0]);
     }
 
-    const int x_min = 100;
-    const int x_max = 1000;
-    const int x_step = (x_max - x_min) / X;
-    const int y_step = 7000 / Y;  // magic upper bound
-
-    std::cout << "     +" << std::setfill('-') << std::setw(Y - 1) << ""
-              << "> Y, edges\n"
-              << std::setfill(' ');
-
-    for (int i = 0; i < X + 1; ++i) {
-        const int x = x_min + i * x_step;
-        std::cout << std::setfill(' ') << std::setw(4) << x << " |";
-        const int y = calc_edges(x);
-        std::cout << std::setfill('*') << std::setw(y / y_step) << ""
-                  << "  " << y << '\n';
-    }
-    std::cout << std::setfill(' ');
-    std::cout << "     V\n";
-    std::cout << "     X, N\n";
-
+    // magic upper bound
+    psv::DrawCLIGraph(100, 1000, calc_edges, 0, 7000, X, Y, "N", "edges");
     return 0;
 }

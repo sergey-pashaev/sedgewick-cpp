@@ -11,6 +11,8 @@
 #include <iostream>
 #include <vector>
 
+#include <psv/cli_graph.h>
+
 #include "eratosthenes.h"
 
 int usage(const char* bin) {
@@ -31,20 +33,8 @@ int main(int argc, char* argv[]) {
     int max_x = std::atoi(argv[2]);
     int max_y = std::atoi(argv[3]);
 
-    int* a = new int[N];
-    for (int n = 1; n <= N; ++n) {
-        a[n - 1] = prime_numbers_count(n);
-    }
-
-    for (int x = 1; x <= N; x += N / max_x) {
-        std::cout << std::setw(4) << x - 1 << ' ';
-        for (int y = 0; y <= a[x - 1]; y += a[N - 1] / max_y) {
-            std::cout << '*';
-        }
-        std::cout << ' ' << a[x - 1] << '\n';
-    }
-
-    delete[] a;
+    psv::DrawCLIGraph(1, N, prime_numbers_count, 0, prime_numbers_count(N),
+                      max_x, max_y, "N", "primes");
 
     return 0;
 }

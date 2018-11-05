@@ -33,6 +33,7 @@ resource(ex.1.17.md)
 ex(1.22 ex.1.22.cpp)
 resource(ex.1.25.md)
 ex(1.23 ex.1.23.cpp)
+resource(ex.1.23.md)
 resource(ex.1.26.md)
 
 # ex test
