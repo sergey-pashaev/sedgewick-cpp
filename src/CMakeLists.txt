@@ -41,8 +41,8 @@ function(test PROGRAM CHAPTER TEST_NAME)
   endforeach(input)
 endfunction()
 
-function(test_runnable PROGRAM)
-  add_test(NAME "${PROGRAM}" COMMAND "${PROGRAM}")
+function(test_runnable PROGRAM) # ARGN as list of args
+  add_test(NAME "${PROGRAM}" COMMAND "${PROGRAM}" "${ARGN}")
 endfunction()
 
 add_subdirectory(chapter-1)
