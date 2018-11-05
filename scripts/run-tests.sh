@@ -8,4 +8,4 @@ set -e
 # thanks to it we can just enter `./scripts/run-tests.sh`
 cd "${0%/*}/.."
 
-make && make -C build/ -j4 test ARGS="-V"
+make && make -C build/ -j4 test
