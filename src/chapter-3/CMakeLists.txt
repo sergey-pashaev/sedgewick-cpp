@@ -14,6 +14,7 @@ ex(3.5 ex.3.5.cpp)
 ex(3.6 ex.3.6.cpp)
 ex(3.7 ex.3.7.cpp point.cpp)
 ex_testable(3.8 ex.3.8.cpp point.cpp)
+ex_testable(3.9 ex.3.9.cpp triangle.cpp point.cpp)
 
 test_runnable(ex.3.1)
 test_runnable(ex.3.2)
