@@ -5,6 +5,9 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
 endif()
 
 program(3.2 program.3.2.cpp)
+program(3.5 program.3.5.cpp)
+
+test(program.3.5 chapter-3 program.3.5)
 
 ex(3.1 ex.3.1.cpp)
 ex(3.2 ex.3.2.cpp)
