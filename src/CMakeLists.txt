@@ -15,13 +15,6 @@ function(program NUMBER) # ARGN as list of sources
   add_executable("${BIN_NAME}" "${ARGN}")
 endfunction()
 
-function(ex_testable NUMBER) # ARGN as list of sources
-  set(BIN_NAME "ex.${NUMBER}")
-  add_executable("${BIN_NAME}" "${ARGN}")
-  target_link_libraries("${BIN_NAME}" catch2)
-  add_test(NAME "${BIN_NAME}" COMMAND "${BIN_NAME}")
-endfunction()
-
 function(resource FILE)
   configure_file("${FILE}" "${FILE}" COPYONLY)
 endfunction()
