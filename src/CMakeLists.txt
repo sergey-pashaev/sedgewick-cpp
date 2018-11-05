@@ -7,6 +7,7 @@ endif()
 function(ex NUMBER) # ARGN as list of sources
   set(BIN_NAME "ex.${NUMBER}")
   add_executable("${BIN_NAME}" "${ARGN}")
+  target_link_libraries("${BIN_NAME}" catch2)
 endfunction()
 
 function(program NUMBER) # ARGN as list of sources
