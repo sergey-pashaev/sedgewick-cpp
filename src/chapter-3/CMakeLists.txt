@@ -26,6 +26,7 @@ ex(3.11.char ex.3.11.char.cpp)
 ex(3.11.bit ex.3.11.bit.cpp)
 resource(ex.3.11.sh)
 ex(3.12 ex.3.12.cpp)
+ex(3.13 ex.3.13.cpp)
 
 # ex test
 test_runnable(ex.3.1)
@@ -41,3 +42,4 @@ test_io(ex.3.10 chapter-3 ex.3.10)
 test_io(ex.3.11.char chapter-3 program.3.5)
 test_io(ex.3.11.bit chapter-3 program.3.5)
 test_io(ex.3.12 chapter-3 ex.3.12)
+test_runnable(ex.3.13 1000 20 40)
