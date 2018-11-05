@@ -37,9 +37,9 @@ endfunction()
 
 function(test_runnable PROGRAM) # ARGN as list of args
   if(KCOV_PROGRAM)
-    add_test(NAME "${PROGRAM}" COMMAND kcov --exclude-pattern=/usr/include,thirdparty ./report/ "${PROGRAM}" "${ARGN}")
+    add_test(NAME "${PROGRAM}" COMMAND kcov --exclude-pattern=/usr/include,thirdparty ./report/ "${PROGRAM}" ${ARGN})
   else()
-    add_test(NAME "${PROGRAM}" COMMAND "${PROGRAM}" "${ARGN}")
+    add_test(NAME "${PROGRAM}" COMMAND "${PROGRAM}" ${ARGN})
   endif()
 endfunction()
 
