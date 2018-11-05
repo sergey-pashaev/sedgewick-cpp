@@ -24,7 +24,7 @@ if(USE_KCOV)
   find_program(KCOV_PROGRAM kcov)
 endif()
 
-function(test PROGRAM CHAPTER TEST_NAME)
+function(test_io PROGRAM CHAPTER TEST_NAME)
   file(GLOB inputs ${CMAKE_SOURCE_DIR}/test/${CHAPTER}/${TEST_NAME}.test*.in)
   foreach(input ${inputs})
     if(KCOV_PROGRAM)

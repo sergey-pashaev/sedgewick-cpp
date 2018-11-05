@@ -9,7 +9,7 @@ program(3.2 program.3.2.cpp)
 program(3.5 program.3.5.cpp)
 
 # program test
-test(program.3.5 chapter-3 program.3.5)
+test_io(program.3.5 chapter-3 program.3.5)
 
 # ex
 ex(3.1 ex.3.1.cpp)
@@ -33,9 +33,9 @@ test_runnable(ex.3.3)
 test_runnable(ex.3.4)
 test_runnable(ex.3.5)
 test_runnable(ex.3.6)
-test(ex.3.7 chapter-3 ex.3.7)
+test_io(ex.3.7 chapter-3 ex.3.7)
 test_runnable(ex.3.8)
 test_runnable(ex.3.9 10)
-test(ex.3.10 chapter-3 ex.3.10)
-test(ex.3.11.char chapter-3 program.3.5)
-test(ex.3.11.bit chapter-3 program.3.5)
+test_io(ex.3.10 chapter-3 ex.3.10)
+test_io(ex.3.11.char chapter-3 program.3.5)
+test_io(ex.3.11.bit chapter-3 program.3.5)

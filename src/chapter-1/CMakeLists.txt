@@ -12,10 +12,10 @@ program(1.4 program.1.4.cpp)
 program(connectivity connectivity.cpp)
 
 # program tests
-test(program.1.1 chapter-1 program.1.1)
-test(program.1.2 chapter-1 program.1.1)
-test(program.1.3 chapter-1 program.1.1)
-test(program.1.4 chapter-1 program.1.1)
+test_io(program.1.1 chapter-1 program.1.1)
+test_io(program.1.2 chapter-1 program.1.1)
+test_io(program.1.3 chapter-1 program.1.1)
+test_io(program.1.4 chapter-1 program.1.1)
 test_runnable(program.connectivity)
 
 # ex
@@ -36,4 +36,4 @@ ex(1.23 ex.1.23.cpp)
 resource(ex.1.26.md)
 
 # ex test
-test(ex.1.16 chapter-1 program.1.1)
+test_io(ex.1.16 chapter-1 program.1.1)
