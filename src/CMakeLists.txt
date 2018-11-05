@@ -43,7 +43,11 @@ function(test PROGRAM CHAPTER TEST_NAME)
 endfunction()
 
 function(test_runnable PROGRAM) # ARGN as list of args
-  add_test(NAME "${PROGRAM}" COMMAND "${PROGRAM}" "${ARGN}")
+  if(KCOV_PROGRAM)
+    add_test(NAME "${PROGRAM}" COMMAND kcov --exclude-pattern=/usr/include,thirdparty ./report/ "${PROGRAM}" "${ARGN}")
+  else()
+    add_test(NAME "${PROGRAM}" COMMAND "${PROGRAM}" "${ARGN}")
+  endif()
 endfunction()
 
 add_subdirectory(chapter-1)
