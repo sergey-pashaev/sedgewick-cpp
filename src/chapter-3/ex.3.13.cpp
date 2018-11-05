@@ -11,24 +11,7 @@
 #include <iostream>
 #include <vector>
 
-int prime_numbers_count(int N) {
-    char* a = new char[N];
-    for (int i = 0; i < N; ++i) a[i] = 1;
-    int cnt = 0;
-    for (int i = 2; i < N; ++i) {
-        if (a[i]) {
-            // use long to prevent int overflow
-            for (long j = i; j * i < N; ++j) {
-                a[i * j] = 0;
-                ++cnt;
-            }
-        }
-    }
-
-    delete[] a;
-
-    return cnt;
-}
+#include "eratosthenes.h"
 
 int usage(const char* bin) {
     std::cout
