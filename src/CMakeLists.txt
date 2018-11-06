@@ -10,6 +10,11 @@ function(ex NUMBER) # ARGN as list of sources
   target_link_libraries("${BIN_NAME}" catch2)
 endfunction()
 
+function(ex_no_catch NUMBER) # ARGN as list of sources
+  set(BIN_NAME "ex.${NUMBER}")
+  add_executable("${BIN_NAME}" "${ARGN}")
+endfunction()
+
 function(program NUMBER) # ARGN as list of sources
   set(BIN_NAME "program.${NUMBER}")
   add_executable("${BIN_NAME}" "${ARGN}")
