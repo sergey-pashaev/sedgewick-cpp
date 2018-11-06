@@ -43,5 +43,7 @@ function(test_runnable PROGRAM) # ARGN as list of args
   endif()
 endfunction()
 
+resource(utils.sh)
+
 add_subdirectory(chapter-1)
 add_subdirectory(chapter-3)
