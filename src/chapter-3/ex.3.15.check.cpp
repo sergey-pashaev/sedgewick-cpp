@@ -33,5 +33,11 @@ int main(int argc, char* argv[]) {
             for (long j = i; j * i < N; ++j) a[i * j] = 0;
         }
     }
+
+    for (int i = 2; i < N; ++i) {
+        if (a[i]) std::cout << ' ' << i;
+    }
+    std::cout << '\n';
+
     return 0;
 }
