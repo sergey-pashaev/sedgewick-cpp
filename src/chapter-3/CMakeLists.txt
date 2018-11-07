@@ -57,6 +57,7 @@ resource(ex.3.29.md)
 ex(3.30 ex.3.30.cpp)
 resource(ex.3.31.md)
 ex(3.32 ex.3.32.cpp)
+ex(3.33 ex.3.33.cpp)
 
 # ex test
 test_runnable(ex.3.1)
@@ -89,3 +90,4 @@ test_runnable(ex.3.26)
 test_io(ex.3.27 chapter-3 program.3.9 9 5)
 test_runnable(ex.3.30 20 40)
 test_io(ex.3.32 chapter-3 program.3.9 9 5)
+test_runnable(ex.3.33)

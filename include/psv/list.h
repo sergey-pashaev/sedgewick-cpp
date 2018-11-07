@@ -53,6 +53,43 @@ size_t BetweenCircular(const Node<T>* a, const Node<T>* b) {
     return n;
 }
 
+// Make list out of array of values
+// Return head of list
+template <typename T, std::size_t N>
+Node<T>* Make(const std::array<T, N>& vals) {
+    auto head = new Node<T>;
+    auto cur = head;
+    for (std::size_t i = 0; i < N; ++i) {
+        cur = cur->next(new Node<T>(vals[i]));
+    }
+
+    return head;
+}
+
+// Free list, including head node
+template <typename T>
+void Free(Node<T>* head) {
+    auto cur = head->next();
+    while (cur) {
+        auto next = cur->next();
+        delete cur;
+        cur = next;
+    }
+
+    delete head;
+}
+
+// list[i].value() == vals[i] ?
+template <int N, typename T>
+bool Equal(const Node<T>* head, const std::array<T, N>& vals) {
+    size_t i = 0;
+    for (auto cur = head->next(); cur; cur = cur->next()) {
+        if (cur->value() != vals[i++]) return false;
+    }
+
+    return true;
+}
+
 };  // namespace psv
 
 #endif /* PSV_LIST_H */
