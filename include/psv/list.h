@@ -102,6 +102,21 @@ Node<T>* Copy(const Node<T>* src) {
     return head;
 }
 
+// Remove node if f(node) == true
+template <typename T, typename F>
+void RemoveIf(Node<T>* head, F f) {
+    for (auto cur = head; cur;) {
+        Node<T>* x = cur->next();
+        if (x && f(x)) {
+            auto t = x->next();
+            delete x;
+            cur->next(t);
+        } else {
+            cur = cur->next();
+        }
+    }
+}
+
 };  // namespace psv
 
 #endif /* PSV_LIST_H */
