@@ -7,9 +7,11 @@ endif()
 # program
 program(3.2 program.3.2.cpp)
 program(3.5 program.3.5.cpp)
+program(3.7 program.3.7.cpp)
 
 # program test
 test_io(program.3.5 chapter-3 program.3.5)
+test_runnable(program.3.7 32 1000)
 
 # ex
 ex(3.1 ex.3.1.cpp)
@@ -37,6 +39,7 @@ resource(ex.3.15.md)
 ex(3.16 ex.3.16.cpp)
 ex(3.17 ex.3.17.cpp)
 ex(3.18 ex.3.18.cpp)
+ex(3.19 ex.3.19.cpp)
 
 # ex test
 test_runnable(ex.3.1)
@@ -59,3 +62,4 @@ test_io(ex.3.15.no-check chapter-3 program.3.5 1000)
 test_io(ex.3.16 chapter-3 ex.3.16)
 test_runnable(ex.3.17 1000)
 test_runnable(ex.3.18 1000)
+test_runnable(ex.3.19 32 1000)
