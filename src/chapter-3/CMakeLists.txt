@@ -10,12 +10,14 @@ program(3.5 program.3.5.cpp)
 program(3.7 program.3.7.cpp)
 program(3.8 program.3.8.cpp point.cpp)
 program(3.9 program.3.9.cpp)
+program(3.10 program.3.10.cpp)
 
 # program test
 test_io(program.3.5 chapter-3 program.3.5)
 test_runnable(program.3.7 32 1000)
 test_runnable(program.3.8 100 0.5)
 test_io(program.3.9 chapter-3 program.3.9 9 5)
+test_io(program.3.10 chapter-3 program.3.10 10)
 
 # ex
 ex(3.1 ex.3.1.cpp)
