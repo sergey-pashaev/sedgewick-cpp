@@ -90,6 +90,18 @@ bool Equal(const Node<T>* head, const std::array<T, N>& vals) {
     return true;
 }
 
+// Make copy out of src list
+template <typename T>
+Node<T>* Copy(const Node<T>* src) {
+    auto head = new Node<T>;
+    auto copy = head;
+    for (auto cur = src->next(); cur; cur = cur->next()) {
+        copy = copy->next(new Node<T>(cur->value()));
+    }
+
+    return head;
+}
+
 };  // namespace psv
 
 #endif /* PSV_LIST_H */
