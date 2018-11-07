@@ -42,6 +42,17 @@ size_t LengthCircular(const Node<T>* node) {
     return len;
 }
 
+// Return number of nodes between nodes a & b in a circular list
+template <typename T>
+size_t BetweenCircular(const Node<T>* a, const Node<T>* b) {
+    if (a == b) return 0;
+    size_t n = 0;
+    for (const Node<T>* cur = a->next(); cur && cur != a & cur != b;
+         cur = cur->next())
+        ++n;
+    return n;
+}
+
 };  // namespace psv
 
 #endif /* PSV_LIST_H */
