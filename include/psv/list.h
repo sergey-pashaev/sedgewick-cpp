@@ -129,6 +129,22 @@ Node<T>* CopyIf(const Node<T>* src, F f) {
     return head;
 }
 
+// Reverse list
+template <typename T>
+void Reverse(Node<T>* head) {
+    auto cur = head->next();
+    Node<T>* prev = nullptr;
+    Node<T>* next = nullptr;
+    while (cur) {
+        next = cur->next();
+        cur->next(prev);
+        prev = cur;
+        cur = next;
+    }
+
+    head->next(prev);
+}
+
 };  // namespace psv
 
 #endif /* PSV_LIST_H */
