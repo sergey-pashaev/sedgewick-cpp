@@ -44,6 +44,7 @@ ex(3.18 ex.3.18.cpp)
 ex(3.19 ex.3.19.cpp)
 ex(3.20 ex.3.20.cpp)
 ex(3.21 ex.3.21.cpp point.cpp)
+ex(3.22 ex.3.22.cpp)
 
 # ex test
 test_runnable(ex.3.1)
@@ -69,3 +70,4 @@ test_runnable(ex.3.18 1000)
 test_runnable(ex.3.19 32 1000)
 test_runnable(ex.3.20 32 1000 10)
 test_runnable(ex.3.21 100)
+test_runnable(ex.3.22 100 0.5 3)
