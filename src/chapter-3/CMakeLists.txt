@@ -8,10 +8,12 @@ endif()
 program(3.2 program.3.2.cpp)
 program(3.5 program.3.5.cpp)
 program(3.7 program.3.7.cpp)
+program(3.8 program.3.8.cpp point.cpp)
 
 # program test
 test_io(program.3.5 chapter-3 program.3.5)
 test_runnable(program.3.7 32 1000)
+test_runnable(program.3.8 100 0.5)
 
 # ex
 ex(3.1 ex.3.1.cpp)
@@ -41,6 +43,7 @@ ex(3.17 ex.3.17.cpp)
 ex(3.18 ex.3.18.cpp)
 ex(3.19 ex.3.19.cpp)
 ex(3.20 ex.3.20.cpp)
+ex(3.21 ex.3.21.cpp point.cpp)
 
 # ex test
 test_runnable(ex.3.1)
@@ -65,3 +68,4 @@ test_runnable(ex.3.17 1000)
 test_runnable(ex.3.18 1000)
 test_runnable(ex.3.19 32 1000)
 test_runnable(ex.3.20 32 1000 10)
+test_runnable(ex.3.21 100)
