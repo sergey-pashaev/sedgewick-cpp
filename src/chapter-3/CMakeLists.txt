@@ -86,6 +86,7 @@ ex(3.57 ex.3.57.cpp)
 ex(3.58 ex.3.58.cpp)
 ex(3.62 ex.3.62.cpp)
 ex(3.63 ex.3.63.cpp)
+ex(3.64 ex.3.64.cpp)
 
 # ex test
 test_runnable(ex.3.1)
@@ -137,3 +138,4 @@ test_runnable(ex.3.57)
 test_io(ex.3.58 chapter-3 ex.3.58 abc)
 test_runnable(ex.3.62 4 4 4)
 test_io(ex.3.63 chapter-3 program.3.17)
+test_io(ex.3.64 chapter-3 ex.3.64)
