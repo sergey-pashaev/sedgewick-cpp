@@ -76,6 +76,8 @@ ex(3.46 ex.3.46.cpp)
 ex(3.47 ex.3.47.cpp)
 ex(3.48 ex.3.48.cpp)
 ex(3.49 ex.3.49.cpp)
+resource(ex.3.50.sh)
+resource(ex.3.50.md)
 
 # ex test
 test_runnable(ex.3.1)
