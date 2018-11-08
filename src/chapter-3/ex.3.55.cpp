@@ -12,20 +12,13 @@
 #include <iostream>
 #include <limits>
 
-int usage(const char* bin) {
-    std::cout << "Usage: " << bin << " <string>\n";
-    return 1;
-}
-
-int main(int argc, char* argv[]) {
-    if (argc < 2) {
-        return usage(argv[0]);
-    }
-
+int main() {
+    std::string line;
+    std::getline(std::cin, line);
     const int N = std::numeric_limits<char>::max() + 1;
     std::array<int, N> table = {};
-    for (const char* str = argv[1]; *str; ++str) {
-        ++table[static_cast<int>(*str)];
+    for (const char c : line) {
+        ++table[static_cast<int>(c)];
     }
 
     for (int i = 0, n = 0; i < N; ++i) {
