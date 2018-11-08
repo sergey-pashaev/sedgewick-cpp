@@ -79,6 +79,7 @@ ex(3.49 ex.3.49.cpp)
 resource(ex.3.50.sh)
 resource(ex.3.50.md)
 ex(3.55 ex.3.55.cpp)
+ex(3.56 ex.3.56.cpp)
 
 # ex test
 test_runnable(ex.3.1)
@@ -125,3 +126,4 @@ test_runnable(ex.3.47)
 test_runnable(ex.3.48)
 test_io(ex.3.49 chapter-3 program.3.9 9 5)
 test_io(ex.3.55 chapter-3 ex.3.55 "Write a program that takes a string as argument, and that prints out a table giving, for each character that occurs in the string, the character and its frequency of occurrence.")
+test_runnable(ex.3.56)
