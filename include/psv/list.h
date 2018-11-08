@@ -145,6 +145,41 @@ void Reverse(Node<T>* head) {
     head->next(prev);
 }
 
+// Sort list
+template <typename T>
+Node<T>* InsertionSort(Node<T>* in) {
+    // put first node to sorted list
+    Node<T>* sorted = in;
+    Node<T>* unsorted = in->next();
+    sorted->next(nullptr);
+
+    // loop over unsorted list
+    for (Node<T>* next = nullptr; unsorted; unsorted = next) {
+        next = unsorted->next();
+
+        // find node to insert before
+        Node<T>* insert_before = nullptr;
+        Node<T>* insert_after = nullptr;
+        for (insert_before = sorted; insert_before;
+             insert_after = insert_before,
+            insert_before = insert_before->next()) {
+            if (unsorted->value() < insert_before->value()) break;
+        }
+
+        if (insert_after) {
+            // insert after node
+            insert_after->next(unsorted);
+            unsorted->next(insert_before);
+        } else {
+            // insert before node
+            unsorted->next(insert_before);
+            sorted = unsorted;
+        }
+    }
+
+    return sorted;
+}
+
 };  // namespace psv
 
 #endif /* PSV_LIST_H */
