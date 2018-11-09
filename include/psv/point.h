@@ -2,6 +2,8 @@
 #define PSV_POINT_H
 
 #include <cmath>
+#include <ostream>
+#include <random>
 
 namespace psv {
 
@@ -17,15 +19,52 @@ class Point {
 
     T distance() const { return std::sqrt(x_ * x_ + y_ * y_); }
 
+    T distance(const Point& other) const {
+        const T dx = this->x_ - other.x_;
+        const T dy = this->y_ - other.y_;
+        return std::sqrt(dx * dx + dy * dy);
+    }
+
+    bool operator==(const Point& other) const {
+        return distance(other) < epsilon_;
+    }
+
+    static Point random() { return Point(dist_(gen_), dist_(gen_)); }
+
+    template <typename U>
+    friend std::ostream& operator<<(std::ostream& os, const Point<U>& point);
+
    private:
     T x_;
     T y_;
+
+    static T epsilon_;
+
+    static std::mt19937 gen_;
+    static std::uniform_real_distribution<T> dist_;
 };
+
+template <typename T>
+T Point<T>::epsilon_ = 0.001;
+
+template <typename T>
+std::mt19937 Point<T>::gen_{std::random_device()()};
+
+template <typename T>
+std::uniform_real_distribution<T> Point<T>::dist_{0, 1.0};
+
+template <typename U>
+std::ostream& operator<<(std::ostream& os, const Point<U>& point) {
+    os << '(' << point.X() << ',' << point.Y() << ')';
+    return os;
+}
 
 template <typename T>
 class PolarPoint {
    public:
     PolarPoint() : r_(0), phi_(0) {}
+
+    PolarPoint(T r, T phi) : r_(r), phi_(phi) {}
 
     PolarPoint(const Point<T>& p)
         : r_(p.distance()), phi_(std::atan2(p.Y(), p.X())) {}
@@ -41,10 +80,26 @@ class PolarPoint {
 
     T distance() const { return r_; }
 
+    bool operator==(const Point<T>& other) const {
+        return distance(other) < Point<T>::epsilon_;
+    }
+
+    static PolarPoint random() { return PolarPoint(Point<T>::random()); }
+
+    template <typename U>
+    friend std::ostream& operator<<(std::ostream& os,
+                                    const PolarPoint<U>& point);
+
    private:
     T r_;
     T phi_;
 };
+
+template <typename U>
+std::ostream& operator<<(std::ostream& os, const PolarPoint<U>& point) {
+    os << '(' << point.R() << ',' << point.Phi() << ')';
+    return os;
+}
 
 }  // namespace psv
 
