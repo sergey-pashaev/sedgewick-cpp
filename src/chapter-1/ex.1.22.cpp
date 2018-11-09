@@ -16,6 +16,7 @@
 #include <algorithm>
 #include <iostream>
 #include <vector>
+#include <random>
 
 int usage(const char* bin) {
     std::cout << "Usage: " << bin << " <positive int N>\n";

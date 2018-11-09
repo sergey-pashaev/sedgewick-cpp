@@ -11,6 +11,7 @@
 #include <iomanip>
 #include <iostream>
 #include <vector>
+#include <random>
 
 #include <psv/cli_graph.h>
 
