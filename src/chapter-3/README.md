@@ -1,4 +1,4 @@
-# Chapter 1
+# Chapter 3
 
 - [x] 3.1 ▷
 - [x] 3.2
