@@ -1,6 +1,6 @@
 # ex.1.1
 
-###### task
+## task
 
 en: Give the output that a connectivity algorithm should produce when
 given the input 0-2, 1-4, 2-5, 3-6, 0-4, 6-0,and 1-3.
@@ -8,7 +8,7 @@ given the input 0-2, 1-4, 2-5, 3-6, 0-4, 6-0,and 1-3.
 ru: Приведите выходные данные, которые должен выдавать алгоритм
 связности для входных пар 0-2, 1-4, 2-5, 3-6, 0-4, 6-0 и 1-3.
 
-###### solution
+## solution
 
 ```
 0-2 0-2

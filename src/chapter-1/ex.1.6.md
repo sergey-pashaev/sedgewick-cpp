@@ -1,6 +1,6 @@
 # ex.1.6
 
-###### task
+## task
 
 en: Give the contents of the id array after each union operation for
 the weighted quick-union algorithm running on the examples
@@ -10,7 +10,7 @@ ru: Приведите содержимое массива id после вып�
 объединение для алгоритма взвешенного быстрого объединения
 применительно к примерам, соответствующим рис. 1.7 и 1.8.
 
-###### solution
+## solution
 ```
 * weight indicated in brackets
 

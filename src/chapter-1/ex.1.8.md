@@ -1,6 +1,6 @@
 # ex.1.8
 
-###### task
+## task
 
 en: Do Exercise 1.4, but use the weighted quick-union algorithm with
 path compression by halving (Program 1.4).
@@ -8,7 +8,7 @@ path compression by halving (Program 1.4).
 ru: Выполните упражнение 1.4, но для алгоритма взвешенного быстрого
 объединения со сжатием пути делением пополам (программа 1.4).
 
-###### solution
+## solution
 ```
 * weight indicated in brackets
 

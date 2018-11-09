@@ -1,6 +1,6 @@
 # ex.1.25
 
-###### task
+## task
 
 en: Suppose that we use weighted quick union to process 10 times as
 many connections on a new computer that is 10 times as fast as an
@@ -14,7 +14,7 @@ ru: Допустим, что взвешенное быстрое объедин�
 компьютере по сравнению с выполнением старой задачи на старом
 компьютере?
 
-###### solution
+## solution
 
 ```
 N - size

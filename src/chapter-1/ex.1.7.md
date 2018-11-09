@@ -1,13 +1,13 @@
 # ex.1.7
 
-###### task
+## task
 
 en: Do Exercise 1.4, but use the weighted quick-union algorithm (Program 1.3).
 
 ru: Выполните упражнение 1.4, но для алгоритма взвешенного быстрого
 объединения (программа 1.3).
 
-###### solution
+## solution
 ```
 * weight indicated in brackets
 

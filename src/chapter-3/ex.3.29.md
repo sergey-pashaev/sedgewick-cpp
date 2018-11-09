@@ -1,6 +1,6 @@
 # ex.3.29
 
-###### task
+## task
 
 en: Use Program 3.9 to determine the value of the Josephus function
 for M = 2, 3, 5, 10, and N = 10^3, 10^4, 10^5, and 10^6.
@@ -8,7 +8,7 @@ for M = 2, 3, 5, 10, and N = 10^3, 10^4, 10^5, and 10^6.
 ru: Используйте программу 3.9, чтобы определить значения функции
 Иосифа для M = 2, 3, 5, 10 и N = 10^3, 10^4, 10^5 и 10^6.
 
-###### solution
+## solution
 
 ```
 $ ./ex.3.29.sh

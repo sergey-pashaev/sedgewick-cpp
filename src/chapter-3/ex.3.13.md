@@ -1,6 +1,6 @@
 # ex.3.13
 
-###### task
+## task
 
 en: Use the sieve of Eratosthenes to draw a plot of N versus the
 number of primes less than N for N between 1 and 1000.
@@ -8,7 +8,7 @@ number of primes less than N for N between 1 and 1000.
 ru: С помощью решета Эратосфена постройте график зависимост от N
 количества простых чисел, меньших N, для значений N от 1 до 1000
 
-###### solution
+## solution
 
 ```
 $ ./ex.3.13 1000 20 40

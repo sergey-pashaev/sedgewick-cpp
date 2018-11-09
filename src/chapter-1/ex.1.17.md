@@ -1,6 +1,6 @@
 # ex.1.17
 
-###### task
+## task
 
 en: Answer Exercise 1.4, but using the weighted quick-union algorithm
 with full path compression (Exercise 1.16).
@@ -8,7 +8,7 @@ with full path compression (Exercise 1.16).
 ru: Выполните упражнение 1.4, но используйте алгоритм взвешенного
 быстрого объединения с полным сжатием пути (упражнение 1.16).
 
-###### solution
+## solution
 ```
 * weight indicated in brackets
 

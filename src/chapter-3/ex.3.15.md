@@ -1,6 +1,6 @@
 # ex.3.15
 
-###### task
+## task
 
 en: Empirically determine the effect of removing the test of a[i] from
 the inner loop of Program 3.5, for N = 10^3, 10^4, 10^5, and 10^6, and
@@ -10,7 +10,7 @@ ru: Эмпирически определите эффект удаления п
 внутреннего цикла программы 3.5 для N = 10^3, 10^4, 10^5, 10^6 и
 объясните его.
 
-###### solution
+## solution
 
 ```
 $ ./ex.3.15.sh

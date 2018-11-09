@@ -1,6 +1,6 @@
 # ex.1.11
 
-###### task
+## task
 
 en: Estimate the maximum amount of time (in seconds) that would be
 required for weighted quick union (Program 1.3) to solve a prolem with
@@ -15,7 +15,7 @@ ru: Определите максимальное время (в секунда�
 каждой итерации внешнего цикла while должно выполняться не более 100
 инструкций.
 
-###### solution
+## solution
 ```
 N = 10^9 objects
 M = 10^6 edges

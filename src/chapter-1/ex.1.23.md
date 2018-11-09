@@ -1,6 +1,6 @@
 # ex.1.23
 
-###### task
+## task
 
 en: Modify your program from Exercise 1.22 to plot the number of
 edges needed to connect N items, for 100 <= N <= 1000.
@@ -9,7 +9,7 @@ ru: Измените программу из упражнения 1.22, чтоб
 виде графика количество ребер, требующихся для соединения N
 элементов, 100 <= N <= 1000.
 
-###### solution
+## solution
 
 ```
 $ ./ex.1.23 20 40

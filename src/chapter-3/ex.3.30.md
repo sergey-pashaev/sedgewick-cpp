@@ -1,6 +1,6 @@
 # ex.3.30
 
-###### task
+## task
 
 en: Use Program 3.9 to plot the Josephus function versus N for M =
 10 and N from 2 to 1000.
@@ -8,7 +8,7 @@ en: Use Program 3.9 to plot the Josephus function versus N for M =
 ru: Используйте программу 3.9, чтобы построить график зависимости
 функции Иосифа от N для M = 10 и N от 2 до 1000.
 
-###### solution
+## solution
 
 ```
 $ ./ex.3.30 20 40

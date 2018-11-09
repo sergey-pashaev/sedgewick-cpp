@@ -1,6 +1,6 @@
 # ex.1.9
 
-###### task
+## task
 
 en: Prove an upper bound on the number of machine instructions
 required to process M connections on N objects using Program 1.3. You
@@ -13,7 +13,7 @@ ru: Определите верхнюю границу количества ма
 оператора присваивания C++ всегда требуется выполнение менее c
 инструкций, где c - некоторая фиксированная константа.
 
-###### solution
+## solution
 ```
 N - objects
 M - connections

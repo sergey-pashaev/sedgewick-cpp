@@ -1,6 +1,6 @@
 # ex.1.10
 
-###### task
+## task
 
 en: Estimate the minimum amount of time (in days) that would be
 required for quick find (Program 1.1) to solve a problem with
@@ -14,7 +14,7 @@ ru: Определите минимальное время (в днях), кот
 выполнять 10^9 инструкций в секунду. Считайте, что при каждой итерации
 внутреннего цикла for должно выполняться не менее 10 инструкций.
 
-###### solution
+## solution
 ```
 N = 10^9 objects
 M = 10^6 edges

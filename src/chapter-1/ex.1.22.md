@@ -1,6 +1,6 @@
 # ex.1.22
 
-###### task
+## task
 
 en: Modify Program 1.4 to generate random pairs of integers between
 0 and N–1 instead of reading them from standard input, and to loop
@@ -15,7 +15,7 @@ ru: Измените программу 1.4, чтобы она генериро�
 значений N = 10^3, 10^4, 10^5, и 10^6 и выведите общее количество
 ребер, генерируемых для каждого значения N.
 
-###### solution
+## solution
 
 ```
 $ ./ex.1.22 1000

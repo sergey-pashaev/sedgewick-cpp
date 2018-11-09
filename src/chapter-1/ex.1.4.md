@@ -1,6 +1,6 @@
 # ex.1.4
 
-###### task
+## task
 
 en: Show the contents of the id array after each union operation when
 you use the quick-find algorithm (Program 1.1) to solve the
@@ -14,7 +14,7 @@ ru: Приведите содержимое массива id после вып�
 2-5, 3-6, 0-4, 6-0 и 1-3. Укажите также количество обращений программы
 к массиву id для каждой вводимой пары.
 
-###### solution
+## solution
 ```
 input 0,2  id: 2 1 2 3 4 5 6 7 8 9  accesses: 15
 input 1,4  id: 2 4 2 3 4 5 6 7 8 9  accesses: 15

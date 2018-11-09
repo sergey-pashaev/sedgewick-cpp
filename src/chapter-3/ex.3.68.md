@@ -1,6 +1,6 @@
 # ex.3.68
 
-###### task
+## task
 
 en: Show the adjacency matrix that is built by Program 3.18 given the
 input pairs 0-2, 1-4, 2-5, 3-6, 0-4, 6-0, and 1-3.
@@ -8,7 +8,7 @@ input pairs 0-2, 1-4, 2-5, 3-6, 0-4, 6-0, and 1-3.
 ru: Запишите матрицу смежности, построенную программой 3.18, для
 введенных пар значений: 0-2, 1-4, 2-5, 3-6, 0-4, 6-0 и 1-3.
 
-###### solution
+## solution
 ```
 $ ./program.3.18
 0 2
