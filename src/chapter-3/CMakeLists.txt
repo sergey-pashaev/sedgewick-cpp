@@ -15,6 +15,7 @@ program(3.11 program.3.11.cpp)
 program(3.13 program.3.13.cpp)
 program(3.17 program.3.17.cpp)
 program(3.18 program.3.18.cpp)
+program(3.19 program.3.19.cpp)
 
 # program test
 test_io(program.3.5 chapter-3 program.3.5)
@@ -26,6 +27,7 @@ test_runnable(program.3.11 100)
 test_io(program.3.13 chapter-3 program.3.9 9 5)
 test_io(program.3.17 chapter-3 program.3.17)
 test_io(program.3.18 chapter-3 program.3.18)
+test_io(program.3.19 chapter-3 program.3.19)
 
 # ex
 ex(3.1 ex.3.1.cpp)
