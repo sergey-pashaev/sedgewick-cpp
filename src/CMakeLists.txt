@@ -52,3 +52,4 @@ resource(utils.sh)
 
 add_subdirectory(chapter-1)
 add_subdirectory(chapter-3)
+add_subdirectory(chapter-4)
