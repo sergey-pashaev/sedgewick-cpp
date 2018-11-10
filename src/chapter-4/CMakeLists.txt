@@ -5,8 +5,10 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
 endif()
 
 # program
+program(4.5 program.4.5.cpp)
 
 # program test
+test_io(program.4.5 chapter-4 "10 2 +")
 
 # ex
 ex(4.1 ex.4.1.cpp)
