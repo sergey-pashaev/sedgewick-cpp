@@ -9,17 +9,10 @@
 
 #include <psv/stack.h>
 
-int usage(const char* bin) {
-    std::cout << "Usage: " << bin << " <string expression>\n";
-    return 1;
-}
-
-int main(int argc, char* argv[]) {
-    if (argc < 2) {
-        return usage(argv[0]);
-    }
-
-    char* a = argv[1];
+int main() {
+    std::string expr;
+    std::getline(std::cin, expr);
+    const char* a = expr.c_str();
     std::size_t N = std::strlen(a);
     psv::Stack<int> save(N);
 
