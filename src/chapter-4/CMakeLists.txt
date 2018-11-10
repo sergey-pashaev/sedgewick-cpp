@@ -7,10 +7,12 @@ endif()
 # program
 program(4.5 program.4.5.cpp)
 program(4.6 program.4.6.cpp)
+program(4.10 program.4.10.cpp)
 
 # program test
 test_io(program.4.5 chapter-4 program.4.5)
 test_io(program.4.6 chapter-4 program.4.6)
+test_io(program.4.10 chapter-1 program.1.1 1000)
 
 # ex
 ex(4.1 ex.4.1.cpp)
