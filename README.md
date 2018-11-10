@@ -1,5 +1,7 @@
 # Algorithms in C++
 
+[![Build Status](https://travis-ci.org/sergey-pashaev/sedgewick-cpp.svg?branch=master)](https://travis-ci.org/sergey-pashaev/sedgewick-cpp)
+
 Here I collect exercise solutions from Algorithms in C++ book by Robert Sedgewick.
 I use the russian translation of the book, so the entire text of the exercises will be given in russian and english.
 
