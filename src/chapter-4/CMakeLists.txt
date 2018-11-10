@@ -37,6 +37,7 @@ ex(4.25 ex.4.25.cpp)
 ex(4.27 ex.4.27.cpp)
 ex(4.29 ex.4.29.cpp)
 ex(4.30 ex.4.30.cpp)
+ex(4.32 ex.4.32.cpp)
 
 # ex test
 test_runnable(ex.4.1 10 0.5)
@@ -54,3 +55,4 @@ test_runnable(ex.4.25)
 test_runnable(ex.4.27)
 test_io(ex.4.29 chapter-1 program.1.1 1000)
 test_io(ex.4.30 chapter-1 program.1.1 1000)
+test_io(ex.4.32 chapter-1 program.1.1 1000)
