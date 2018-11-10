@@ -6,6 +6,9 @@ I use the russian translation of the book, so the entire text of the exercises w
   * english: ISBN 978-0-321-60633-4
   * russian: ISBN 978-5-8459-2070-6
 
+## navigation
+  * [Chapter 1: Introduction](./src/chapter-1/README.md)
+
 ## install git hooks
 
     $ make install-hooks
