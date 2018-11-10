@@ -9,8 +9,8 @@ program(4.5 program.4.5.cpp)
 program(4.6 program.4.6.cpp)
 
 # program test
-test_io(program.4.5 chapter-4 "10 2 +")
-test_io(program.4.6 chapter-4 "(10 + 2)")
+test_io(program.4.5 chapter-4 program.4.5 "10 2 +")
+test_io(program.4.6 chapter-4 program.4.6 "(10 + 2)")
 
 # ex
 ex(4.1 ex.4.1.cpp)
