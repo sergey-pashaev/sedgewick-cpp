@@ -8,6 +8,7 @@ I use the russian translation of the book, so the entire text of the exercises w
 
 ## navigation
   * [Chapter 1: Introduction](./src/chapter-1/README.md)
+  * [Chapter 3: Elementary Data Structures](./src/chapter-3/README.md)
 
 ## install git hooks
 
