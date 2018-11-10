@@ -1,4 +1,4 @@
-# Chapter 4
+# Chapter 4: Abstract Data Types
 
 - [x] [4.1 ▷](./ex.4.1.cpp)
 - [x] [4.2](./ex.4.2.cpp)

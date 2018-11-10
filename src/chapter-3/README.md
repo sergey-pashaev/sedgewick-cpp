@@ -1,4 +1,4 @@
-# Chapter 3
+# Chapter 3: Elementary Data Structures
 
 - [x] [3.1 ▷](./ex.3.1.cpp)
 - [x] [3.2](./ex.3.2.md)

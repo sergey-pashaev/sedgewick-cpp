@@ -1,4 +1,4 @@
-# Chapter 1
+# Chapter 1: Introduction
 
 - [x] [1.1](./ex.1.1.md)
 - [ ] 1.2
