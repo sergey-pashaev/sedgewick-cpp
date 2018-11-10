@@ -24,6 +24,7 @@ resource(ex.4.10.md)
 resource(ex.4.12.md)
 resource(ex.4.13.md)
 ex(4.14 ex.4.14.cpp)
+ex(4.15 ex.4.15.cpp)
 
 # ex test
 test_runnable(ex.4.1 10 0.5)
@@ -33,3 +34,4 @@ test_runnable(ex.4.4 100)
 test_runnable(ex.4.6)
 test_runnable(ex.4.7)
 test_runnable(ex.4.14)
+test_runnable(ex.4.15)
