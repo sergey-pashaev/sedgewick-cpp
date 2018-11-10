@@ -25,6 +25,8 @@ resource(ex.4.12.md)
 resource(ex.4.13.md)
 ex(4.14 ex.4.14.cpp)
 ex(4.15 ex.4.15.cpp)
+resource(ex.4.16.md)
+resource(ex.4.16.ps)
 
 # ex test
 test_runnable(ex.4.1 10 0.5)

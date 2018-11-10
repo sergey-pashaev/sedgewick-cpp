@@ -1,0 +1,33 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: 0 0 595 842
+
+% ex.4.16
+
+% Напишите на языке PostScript программу, которая вычерчивает
+% следующую фигуру:
+%     ____
+%    |    |
+% ___|    |___
+
+64 dict begin
+
+/square {
+    dup 0 rlineto
+    90 rotate
+    dup 0 rlineto
+    -90 rotate
+    dup 0 rlineto
+    -90 rotate
+    dup 0 rlineto
+    90 rotate
+    dup 0 rlineto
+    pop
+} def
+
+100 300 moveto
+144 square
+stroke
+
+end
+showpage
+%%EOF
