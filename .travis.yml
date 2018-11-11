@@ -13,6 +13,7 @@ compiler:
 env:
   - TARGET_CPU=amd64
   - TARGET_CPU=x86
+  - PATH=${PATH}:${HOME}/kcov/bin
 
 matrix:
   exclude:
@@ -28,16 +29,35 @@ addons:
     packages:
       - g++-5
       - clang
+      # kcov
+      - binutils-dev
+      - libcurl4-openssl-dev
+      - zlib1g-dev
+      - libdw-dev
+      - libiberty-dev
+
+before_install:
+  - wget -O kcov-master.tar.gz https://github.com/SimonKagstrom/kcov/archive/master.tar.gz
 
 install:
   - uname -a
   - if [ "$CXX" = "g++" ]; then export CXX="/usr/bin/g++-5" CC="/usr/bin/gcc-5"; fi
   - $CC --version
   - $CXX --version
+  # build & install kcov
+  - tar xzf kcov-master.tar.gz
+  - cd kcov-master
+  - mkdir build
+  - cd build
+  - cmake -DCMAKE_INSTALL_PREFIX=${HOME}/kcov ..
+  - make
+  - make install
+  - cd ../..
+  - rm -rf kcov-master
 
 script:
   - mkdir build
   - cd build
-  - cmake .. -DTARGET_CPU=$TARGET_CPU
+  - cmake .. -DTARGET_CPU=$TARGET_CPU -DTRAVIS_JOB_ID=$TRAVIS_JOB_ID
   - cmake --build . -- -j2
   - ctest .
