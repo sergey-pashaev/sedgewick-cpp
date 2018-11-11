@@ -11,9 +11,11 @@ compiler:
   - clang
 
 env:
+  global:
+    - PATH=${PATH}:${HOME}/kcov/bin
+  matrix:
   - TARGET_CPU=amd64
   - TARGET_CPU=x86
-  - PATH=${PATH}:${HOME}/kcov/bin
 
 matrix:
   exclude:
@@ -60,4 +62,4 @@ script:
   - cd build
   - cmake .. -DTARGET_CPU=$TARGET_CPU -DTRAVIS_JOB_ID=$TRAVIS_JOB_ID
   - cmake --build . -- -j2
-  - ctest .
+  - ctest -V .
