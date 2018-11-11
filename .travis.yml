@@ -1,5 +1,5 @@
 dist: trusty
-sudo: false
+sudo: required # workaround travis + kcov issue (https://github.com/travis-ci/travis-ci/issues/9061)
 language: cpp
 
 os:
