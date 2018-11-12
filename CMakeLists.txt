@@ -27,6 +27,5 @@ include_directories(include)
 include_directories(src)
 include_directories(thirdparty)
 
-add_library(catch2 SHARED thirdparty/catch2-main.cpp)
-
 add_subdirectory(src)
+add_subdirectory(thirdparty)
