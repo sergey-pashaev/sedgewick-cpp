@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ../utils.sh
+source ../../scripts/utils.sh
 
 mem_usage ./ex.3.11.char
 mem_usage ./ex.3.11.bit

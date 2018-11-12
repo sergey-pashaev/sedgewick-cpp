@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ../utils.sh
+source ../../scripts/utils.sh
 
 Ns=(1000 10000 100000 1000000)
 Ms=(2)

@@ -27,5 +27,7 @@ include_directories(include)
 include_directories(src)
 include_directories(thirdparty)
 
+configure_file(scripts/utils.sh scripts/utils.sh COPYONLY)
+
 add_subdirectory(src)
 add_subdirectory(thirdparty)

@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 function mem_usage() {
     local bin=$1
     local pid=$(valgrind --tool=massif --time-unit=B --stacks=yes ${bin} 2>&1 | tail -n 1)
