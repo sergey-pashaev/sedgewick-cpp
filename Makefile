@@ -6,7 +6,7 @@ exercises:
 	./scripts/build.sh
 
 test:
-	./scripts/run-tests.sh
+	./scripts/tests.sh
 
 install-hooks:
 	./scripts/install-hooks.sh

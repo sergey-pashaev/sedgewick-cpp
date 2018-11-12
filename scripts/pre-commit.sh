@@ -7,7 +7,7 @@ STASH_NAME="pre-commit-$(date +%s)"
 git stash save -q --keep-index $STASH_NAME
 
 # run tests
-./scripts/run-tests.sh
+./scripts/tests.sh
 
 # restore stashed files
 STASH_NUM=$(git stash list | grep $STASH_NAME | sed -re 's/stash@\{(.*)\}.*/\1/')
