@@ -4,20 +4,24 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
   cmake_policy(VERSION ${CMAKE_VERSION})
 endif()
 
-function(ex NUMBER) # ARGN as list of sources
-  set(BIN_NAME "ex.${NUMBER}")
-  add_executable("${BIN_NAME}" "${ARGN}")
-  target_link_libraries("${BIN_NAME}" catch2)
+function(ex)
+  set(options NO_UNIT_TESTS)
+  set(args NUMBER)
+  set(lists FILES)
+  cmake_parse_arguments(EX "${options}" "${args}" "${lists}" ${ARGN})
+  set(name "ex.${EX_NUMBER}")
+  add_executable("${name}" "${EX_FILES}")
+  if(NOT EX_NO_UNIT_TESTS)
+    target_link_libraries("${name}" catch2)
+  endif()
 endfunction()
 
-function(ex_no_catch NUMBER) # ARGN as list of sources
-  set(BIN_NAME "ex.${NUMBER}")
-  add_executable("${BIN_NAME}" "${ARGN}")
-endfunction()
-
-function(program NUMBER) # ARGN as list of sources
-  set(BIN_NAME "program.${NUMBER}")
-  add_executable("${BIN_NAME}" "${ARGN}")
+function(program)
+  set(args NUMBER)
+  set(lists FILES)
+  cmake_parse_arguments(PROGRAM "" "${args}" "${lists}" ${ARGN})
+  set(name "program.${PROGRAM_NUMBER}")
+  add_executable("${name}" "${PROGRAM_FILES}")
 endfunction()
 
 function(resource FILE)
