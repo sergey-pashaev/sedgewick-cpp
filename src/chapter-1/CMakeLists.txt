@@ -12,11 +12,11 @@ program(NUMBER 1.4 FILES program.1.4.cpp)
 program(NUMBER connectivity FILES connectivity.cpp)
 
 # program tests
-test_io(program.1.1 chapter-1 program.1.1)
-test_io(program.1.2 chapter-1 program.1.1)
-test_io(program.1.3 chapter-1 program.1.1)
-test_io(program.1.4 chapter-1 program.1.1)
-test_runnable(program.connectivity)
+test(TARGET program.1.1 TEST_SET program.1.1)
+test(TARGET program.1.2 TEST_SET program.1.1)
+test(TARGET program.1.3 TEST_SET program.1.1)
+test(TARGET program.1.4 TEST_SET program.1.1)
+test(TARGET program.connectivity)
 
 # ex
 resource(ex.1.1.md)
@@ -37,4 +37,4 @@ resource(ex.1.23.md)
 resource(ex.1.26.md)
 
 # ex test
-test_io(ex.1.16 chapter-1 program.1.1)
+test(TARGET ex.1.16 TEST_SET program.1.1)

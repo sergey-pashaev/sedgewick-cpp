@@ -35,22 +35,49 @@ if(USE_KCOV)
   set(KCOV_REPORT_PATH "/tmp/kcov")
 endif()
 
-function(test_io PROGRAM CHAPTER TEST_NAME) # ARGN as list of program arguments
-  file(GLOB inputs ${CMAKE_SOURCE_DIR}/test/${CHAPTER}/${TEST_NAME}.test*.in)
-  foreach(input ${inputs})
-    if(KCOV_PROGRAM)
-      add_test(NAME "${PROGRAM}.${input}" COMMAND ${CMAKE_SOURCE_DIR}/test/coverage.sh ${CMAKE_CURRENT_BINARY_DIR}/${PROGRAM} ${input} ${ARGN})
-    else()
-      add_test(NAME "${PROGRAM}.${input}" COMMAND ${CMAKE_SOURCE_DIR}/test/test.sh ${CMAKE_CURRENT_BINARY_DIR}/${PROGRAM} ${input} ${ARGN})
-    endif()
-  endforeach(input)
-endfunction()
+function(test)
+  set(args TARGET TEST_SET)
+  set(lists CLI_ARGS)
+  cmake_parse_arguments(TEST "" "${args}" "${lists}" ${ARGN})
+  if (TEST_TEST_SET)
+    # IO TEST SET TEST
+    # split test_set arg to get chapter number
+    # <type>.<chapter>.<number>
+    string(REPLACE "." ";" parts "${TEST_TEST_SET}")
+    list(GET parts 1 chapter)
 
-function(test_runnable PROGRAM) # ARGN as list of args
-  if(KCOV_PROGRAM)
-    add_test(NAME "${PROGRAM}" COMMAND ${KCOV_PROGRAM} ${KCOV_ARGS} ${KCOV_REPORT_PATH} "${PROGRAM}" ${ARGN})
+    file(GLOB inputs ${CMAKE_SOURCE_DIR}/test/chapter-${chapter}/${TEST_TEST_SET}.test*.in)
+    foreach(input ${inputs})
+      # make nice test name
+      string(REPLACE "${CMAKE_SOURCE_DIR}/test/chapter-${chapter}/" "" test_name "${input}")
+      set(test_name "${TEST_TARGET}_on_test_set_${test_name}")
+      if (TEST_CLI_ARGS)
+        string(REPLACE ";" "_" str_args "${TEST_CLI_ARGS}")
+        set(test_name "${test_name}_with_args_${str_args}")
+      endif()
+
+      # choose test runner
+      if (KCOV_PROGRAM)
+        set(test_runner "run-test-coverage.sh")
+        add_test(NAME ${test_name} COMMAND ${CMAKE_SOURCE_DIR}/scripts/${test_runner} ${CMAKE_CURRENT_BINARY_DIR}/${TEST_TARGET} ${input} ${KCOV_PROGRAM} ${KCOV_ARGS} ${KCOV_REPORT_PATH})
+      else()
+        set(test_runner "run-test.sh")
+        add_test(NAME ${test_name} COMMAND ${CMAKE_SOURCE_DIR}/scripts/${test_runner} ${CMAKE_CURRENT_BINARY_DIR}/${TEST_TARGET} ${input})
+      endif()
+
+    endforeach()
   else()
-    add_test(NAME "${PROGRAM}" COMMAND "${PROGRAM}" ${ARGN})
+    # UNIT TESTS
+    set(test_name "${TEST_TARGET}")
+    if (TEST_CLI_ARGS)
+      string(REPLACE ";" "_" str_args "${TEST_CLI_ARGS}")
+      set(test_name "${TEST_TARGET}_with_args_${str_args}")
+    endif()
+    if(KCOV_PROGRAM)
+      add_test(NAME ${test_name} COMMAND ${KCOV_PROGRAM} ${KCOV_ARGS} ${KCOV_REPORT_PATH} "${TEST_TARGET}" ${TEST_CLI_ARGS})
+    else()
+      add_test(NAME ${test_name} COMMAND "${TEST_TARGET}" ${TEST_CLI_ARGS})
+    endif()
   endif()
 endfunction()
 
