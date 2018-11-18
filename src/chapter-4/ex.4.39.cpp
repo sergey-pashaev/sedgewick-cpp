@@ -74,6 +74,22 @@ class Queue {
     void error(const char* msg) const { throw std::length_error(msg); }
 };
 
+TEST_CASE("normal usage") {
+    Queue<int> q{3};
+    q.put(1);
+    REQUIRE(q.get() == 1);
+    q.put(2);
+    q.put(3);
+    REQUIRE(q.get() == 2);
+    q.put(4);
+    REQUIRE(q.get() == 3);
+    q.put(5);
+    q.put(6);
+    REQUIRE(q.get() == 4);
+    REQUIRE(q.get() == 5);
+    REQUIRE(q.get() == 6);
+}
+
 TEST_CASE("empty queue") {
     Queue<int> q{3};
     REQUIRE_THROWS_AS(q.get(), std::length_error);
