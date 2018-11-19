@@ -1,0 +1,24 @@
+E     E
+A     A E
+s     A E s
++  A  E s
+Y     Y E s
++  Y  E s
+Q     Q E s
+U     U Q E s
+E     E U Q E s
+*  s  E U Q E
+*  E  E U Q
++  E  U Q
+s     U Q s
+t     U Q s t
++  U  Q s t
+*  t  Q s
++  Q  s
+I     I s
+O     O I s
+*  s  O I
+n     O I n
++  O  I n
++  I  n
+*  n  
