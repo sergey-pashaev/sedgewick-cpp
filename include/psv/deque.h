@@ -87,6 +87,16 @@ class Deque {
         return v;
     }
 
+    T Front() const {
+        if (Empty()) Error("deque is empty");
+        return head_->item;
+    }
+
+    T Back() const {
+        if (Empty()) Error("deque is empty");
+        return tail_->item;
+    }
+
     void Dump(std::ostream& os) const {
         auto t = head_;
         while (t) {
