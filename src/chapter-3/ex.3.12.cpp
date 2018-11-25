@@ -14,8 +14,7 @@
 int main() {
     const std::vector<int> N = {1000, 10'000, 100'000, 1'000'000};
     for (auto n : N) {
-        std::cout << "N = " << n << " count = " << prime_numbers_count(n)
-                  << '\n';
+        std::cout << "N = " << n << " count = " << PrimeNumbersCount(n) << '\n';
     }
     return 0;
 }

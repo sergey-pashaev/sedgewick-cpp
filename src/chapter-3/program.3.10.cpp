@@ -7,24 +7,24 @@
 #include <cstdlib>
 #include <iostream>
 
-struct node {
+struct Node {
     int item;
-    node* next;
+    Node* next;
 
-    node(int x, node* t) : item(x), next(t) {}
+    Node(int x, Node* t) : item(x), next(t) {}
 };
 
-typedef node* link;
+typedef Node* Link;
 
-void print(link x) {
-    for (link cur = x; cur; cur = cur->next) {
+void Print(Link x) {
+    for (Link cur = x; cur; cur = cur->next) {
         std::cout << cur->item << (cur->next ? " " : "");
     }
     std::cout << '\n';
 }
 
-link reverse(link x) {
-    link t, y = x, r = nullptr;
+Link Reverse(Link x) {
+    Link t, y = x, r = nullptr;
     while (y) {
         t = y->next;
         y->next = r;
@@ -50,17 +50,17 @@ int main(int argc, char* argv[]) {
         return usage(argv[0]);
     }
 
-    link t = new node(1, 0);
+    Link t = new Node(1, 0);
     t->next = t;
-    link x = t;
+    Link x = t;
 
     for (int i = 2; i <= N; ++i) {
-        x = (x->next = new node(i, nullptr));
+        x = (x->next = new Node(i, nullptr));
     }
 
-    print(t);
-    t = reverse(t);
-    print(t);
+    Print(t);
+    t = Reverse(t);
+    Print(t);
 
     return 0;
 }

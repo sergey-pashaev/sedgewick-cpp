@@ -15,14 +15,14 @@ class Queue {
 
     ~Queue() { delete[] q_; }
 
-    bool empty() const { return head_ % n_ == tail_; }
+    bool Empty() const { return head_ % n_ == tail_; }
 
-    void put(T v) {
+    void Put(T v) {
         q_[tail_++] = v;
         tail_ %= n_;
     }
 
-    T get() {
+    T Get() {
         head_ %= n_;
         return q_[head_++];
     }

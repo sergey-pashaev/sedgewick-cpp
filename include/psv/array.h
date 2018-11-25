@@ -25,7 +25,7 @@ struct Array2D {
     }
 
     template <typename F>
-    void for_each(F func) {
+    void ForEach(F func) {
         for (std::size_t i = 0; i < rows_; ++i) {
             for (std::size_t j = 0; j < cols_; ++j) {
                 func(data[i][j]);

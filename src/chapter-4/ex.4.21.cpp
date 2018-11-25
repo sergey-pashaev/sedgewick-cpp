@@ -21,9 +21,9 @@ int main() {
     const char* input = "LA*STI*N*FIR*ST**OU*T*******";
     while (*input) {
         if (*input == '*')
-            s.pop();
+            s.Pop();
         else
-            s.push(*input);
+            s.Push(*input);
 
         ++input;
     }

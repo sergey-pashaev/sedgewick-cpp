@@ -24,12 +24,12 @@ int main() {
     Point cur;
     Point closest;
     while (std::cin >> cur.x >> cur.y) {
-        if (distance(first, cur) < min_distance) {
+        if (Distance(first, cur) < min_distance) {
             closest = cur;
         }
     }
 
-    std::cout << distance(first, closest) << ' ' << closest.x << ' '
+    std::cout << Distance(first, closest) << ' ' << closest.x << ' '
               << closest.y << '\n';
 
     return 0;

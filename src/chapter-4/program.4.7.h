@@ -15,19 +15,19 @@ class Stack {
    public:
     explicit Stack(int max) : s_{new T[max]}, n_{0}, cap_{max} {}
     ~Stack() { delete[] s_; }
-    bool empty() const { return n_ == 0; }
-    void push(T v) {
-        if (n_ == cap_) error("stack capacity reached");
+    bool Empty() const { return n_ == 0; }
+    void Push(T v) {
+        if (n_ == cap_) Error("stack capacity reached");
         s_[n_++] = v;
     }
-    T pop() {
-        if (empty()) error("stack is empty");
+    T Pop() {
+        if (Empty()) Error("stack is empty");
         return s_[n_--];
     }
-    std::size_t size() const { return n_; }
+    std::size_t Size() const { return n_; }
 
    private:
-    void error(const char* msg) const { throw std::length_error(msg); }
+    void Error(const char* msg) const { throw std::length_error(msg); }
 
    private:
     T* s_;

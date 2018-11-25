@@ -12,6 +12,6 @@
 
 int main() {
     auto p = psv::Point<float>(4.0, 3.0);
-    std::cout << "D = " << p.distance() << '\n';
+    std::cout << "D = " << p.Distance() << '\n';
     return 0;
 }

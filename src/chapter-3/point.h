@@ -10,8 +10,8 @@ struct Point {
     friend std::ostream& operator<<(std::ostream&, const Point&);
 };
 
-float distance(Point a, Point b);
+float Distance(Point a, Point b);
 
-bool is_collinear(Point p1, Point p2, Point p3, float epsilon);
+bool IsCollinear(Point p1, Point p2, Point p3, float epsilon);
 
 #endif /* POINT_H */

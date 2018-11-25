@@ -10,8 +10,8 @@
 #include <algorithm>
 #include <iomanip>
 #include <iostream>
-#include <vector>
 #include <random>
+#include <vector>
 
 #include <psv/cli_graph.h>
 
@@ -20,7 +20,7 @@ int usage(const char* bin) {
     return 1;
 }
 
-int calc_edges(int N) {
+int CalcEdges(int N) {
     std::vector<int> id(N);
     std::vector<int> sz(N, 1);
     std::iota(id.begin(), id.end(), 0);
@@ -68,6 +68,6 @@ int main(int argc, char* argv[]) {
     }
 
     // magic upper bound
-    psv::DrawCLIGraph(100, 1000, calc_edges, 0, 7000, X, Y, "N", "edges");
+    psv::DrawCLIGraph(100, 1000, CalcEdges, 0, 7000, X, Y, "N", "edges");
     return 0;
 }

@@ -10,33 +10,33 @@
 template <typename T>
 class Queue {
    private:
-    struct node {
-        node(T v) : item{v}, next{nullptr} {}
+    struct Node {
+        Node(T v) : item{v}, next{nullptr} {}
 
         T item;
-        node* next;
+        Node* next;
     };
-    typedef node* link;
-    link head_;
-    link tail_;
+    typedef Node* Link;
+    Link head_;
+    Link tail_;
 
    public:
     Queue(int) { head_ = nullptr; }
 
     ~Queue() {
-        link cur = head_;
+        Link cur = head_;
         while (cur) {
-            link next = cur->next;
+            Link next = cur->next;
             delete cur;
             cur = next;
         }
     }
 
-    bool empty() const { return head_ == nullptr; }
+    bool Empty() const { return head_ == nullptr; }
 
-    void put(T x) {
-        link t = tail_;
-        tail_ = new node(x);
+    void Put(T x) {
+        Link t = tail_;
+        tail_ = new Node(x);
 
         if (head_) {
             t->next = tail_;
@@ -45,9 +45,9 @@ class Queue {
         }
     }
 
-    T get() {
+    T Get() {
         T v = head_->item;
-        link t = head_->next;
+        Link t = head_->next;
         delete head_;
         head_ = t;
         return v;

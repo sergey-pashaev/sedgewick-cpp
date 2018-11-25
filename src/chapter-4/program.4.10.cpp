@@ -27,8 +27,8 @@ int main(int argc, char* argv[]) {
     UF info(N);
     int p, q;
     while (std::cin >> p >> q) {
-        if (!info.find(p, q)) {
-            info.unite(p, q);
+        if (!info.Find(p, q)) {
+            info.Unite(p, q);
             std::cout << ' ' << p << ' ' << q << '\n';
         }
     }

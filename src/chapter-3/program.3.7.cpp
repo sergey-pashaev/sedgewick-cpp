@@ -8,7 +8,7 @@
 #include <ctime>
 #include <iostream>
 
-int heads() { return std::rand() < RAND_MAX / 2; }
+int Heads() { return std::rand() < RAND_MAX / 2; }
 
 int usage(const char* bin) {
     std::cout << "Usage: " << bin << " <positive N> <positive M>\n";
@@ -34,7 +34,7 @@ int main(int argc, char* argv[]) {
 
     for (i = 0; i < M; ++i, f[cnt]++)
         for (cnt = 0, j = 0; j <= N; ++j)
-            if (heads()) ++cnt;
+            if (Heads()) ++cnt;
 
     for (j = 0; j <= N; ++j) {
         if (f[j] == 0) std::cout << '.';

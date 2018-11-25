@@ -12,6 +12,6 @@ struct point {
     float y;
 };
 
-float distance(point, point);
+float Distance(point, point);
 
 #endif /* PROGRAM_3_3_H */

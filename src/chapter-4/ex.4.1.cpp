@@ -19,19 +19,19 @@
 
 class Point {
    public:
-    Point() : x(random()), y(random()) {}
+    Point() : x(Random()), y(Random()) {}
 
     float X() const { return x; }
     float Y() const { return y; }
 
-    bool in_square(const Point& other, float side) const {
+    bool InSquare(const Point& other, float side) const {
         float dx = this->x - other.x;
         float dy = this->y - other.y;
         return std::fabs(dx) <= side && std::fabs(dy) <= side;
     }
 
    private:
-    float random() { return 1.0 * std::rand() / RAND_MAX; }
+    float Random() { return 1.0 * std::rand() / RAND_MAX; }
 
     float x;
     float y;
@@ -63,7 +63,7 @@ int main(int argc, char* argv[]) {
         int cnt = 0;
         for (int i = 0; i < N; ++i) {
             for (int j = i + 1; j < N; ++j) {
-                if (a[i].in_square(a[j], D)) cnt++;
+                if (a[i].InSquare(a[j], D)) cnt++;
             }
         }
         std::cout << cnt << " pairs inside square with side of " << D << '\n';

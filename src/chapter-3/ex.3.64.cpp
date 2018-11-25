@@ -13,7 +13,7 @@
 
 using std::array;
 
-int gcd(int a, int b) { return b ? gcd(b, a % b) : a; }
+int GCD(int a, int b) { return b ? GCD(b, a % b) : a; }
 
 int main() {
     const int N = 20;
@@ -22,7 +22,7 @@ int main() {
 
     for (int i = 0; i < N; ++i) {
         for (int j = 0; j < N; ++j) {
-            arr[i][j] = gcd(i, j) == 1;
+            arr[i][j] = GCD(i, j) == 1;
             std::cout << arr[i][j] << (j + 1 < N ? " " : "");
         }
         std::cout << '\n';

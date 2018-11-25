@@ -35,11 +35,11 @@ int main(int argc, char* argv[]) {
     auto a = std::vector<psv::Point<float>>();
 
     for (int i = 0; i < N; ++i) {
-        a.push_back(psv::Point<float>::random());
+        a.push_back(psv::Point<float>::Random());
 
         for (int j = 0; j < i; ++j) {
             if (a[i] == a[j]) {
-                a[i] = psv::Point<float>::random();
+                a[i] = psv::Point<float>::Random();
                 j = 0;  // start from beginning
             }
         }

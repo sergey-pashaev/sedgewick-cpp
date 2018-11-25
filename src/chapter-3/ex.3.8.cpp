@@ -17,10 +17,10 @@ TEST_CASE("is_collinear") {
     const float epsilon = 1.e-4;
 
     // positive
-    REQUIRE(is_collinear({0.0, 0.0}, {0.0, 0.1}, {0.0, 0.2}, epsilon));
-    REQUIRE(is_collinear({0.1, 0.1}, {0.2, 0.2}, {0.3, 0.3}, epsilon));
+    REQUIRE(IsCollinear({0.0, 0.0}, {0.0, 0.1}, {0.0, 0.2}, epsilon));
+    REQUIRE(IsCollinear({0.1, 0.1}, {0.2, 0.2}, {0.3, 0.3}, epsilon));
 
     // negative
-    REQUIRE(!is_collinear({0.3, 0.1}, {0.2, 0.2}, {0.3, 0.3}, epsilon));
-    REQUIRE(!is_collinear({0.3, 0.1}, {1.0, 0.2}, {0.6, 0.3}, epsilon));
+    REQUIRE(!IsCollinear({0.3, 0.1}, {0.2, 0.2}, {0.3, 0.3}, epsilon));
+    REQUIRE(!IsCollinear({0.3, 0.1}, {1.0, 0.2}, {0.6, 0.3}, epsilon));
 }

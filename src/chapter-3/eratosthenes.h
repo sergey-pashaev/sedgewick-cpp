@@ -3,7 +3,7 @@
 
 #include <vector>
 
-int prime_numbers_count(int N) {
+int PrimeNumbersCount(int N) {
     std::vector<char> a(N, 1);
     for (int i = 2; i < N; ++i) {
         if (a[i]) {

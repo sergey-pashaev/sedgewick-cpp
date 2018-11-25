@@ -30,23 +30,23 @@ class Stack {
             cur = next;
         }
     }
-    bool empty() const { return !head_; }
-    void push(T v) {
+    bool Empty() const { return !head_; }
+    void Push(T v) {
         try {
             head_ = new Node(v, head_);
         } catch (const std::bad_alloc& e) {
-            error("out of memory");
+            Error("out of memory");
         }
     }
-    T pop() {
-        if (empty()) error("stack is empty");
+    T Pop() {
+        if (Empty()) Error("stack is empty");
         T v = head_->v;
         Link t = head_->next;
         delete head_;
         head_ = t;
         return v;
     }
-    std::size_t size() const {
+    std::size_t Size() const {
         std::size_t ret = 0;
         for (Link n = head_; n; n = n->next) {
             ++ret;
@@ -56,7 +56,7 @@ class Stack {
     }
 
    private:
-    void error(const char* msg) const { throw std::length_error(msg); }
+    void Error(const char* msg) const { throw std::length_error(msg); }
 
    private:
     Link head_;

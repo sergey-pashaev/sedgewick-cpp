@@ -9,13 +9,13 @@ std::ostream& operator<<(std::ostream& os, const Point& p) {
     return os;
 }
 
-float distance(Point a, Point b) {
+float Distance(Point a, Point b) {
     float dx = a.x - b.x;
     float dy = a.y - b.y;
     return std::sqrt(dx * dx + dy * dy);
 }
 
-bool is_collinear(Point p1, Point p2, Point p3, float epsilon) {
+bool IsCollinear(Point p1, Point p2, Point p3, float epsilon) {
     assert(std::abs(p1.x) <= 1.0 && std::abs(p1.y) <= 1.0);
     assert(std::abs(p2.x) <= 1.0 && std::abs(p2.y) <= 1.0);
     assert(std::abs(p3.x) <= 1.0 && std::abs(p3.y) <= 1.0);

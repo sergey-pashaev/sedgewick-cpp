@@ -19,7 +19,7 @@ struct Point {
     std::vector<float> d;
 };
 
-float distance(const Point& a, const Point& b) {
+float Distance(const Point& a, const Point& b) {
     assert(a.d.size() == b.d.size());
     float sum = 0.0;
     for (size_t s = 0; s < a.d.size(); ++s) {
@@ -28,7 +28,7 @@ float distance(const Point& a, const Point& b) {
     return std::sqrt(sum);
 }
 
-float randFloat() { return 1.0 * std::rand() / RAND_MAX; }
+float RandomFloat() { return 1.0 * std::rand() / RAND_MAX; }
 
 int usage(const char* bin) {
     std::cout << "Usage: " << bin
@@ -52,14 +52,14 @@ int main(int argc, char* argv[]) {
     std::vector<Point> a(N, Point(D));
     for (int i = 0; i < N; ++i) {
         for (int j = 0; j < D; ++j) {
-            a[i].d[j] = randFloat();
+            a[i].d[j] = RandomFloat();
         }
     }
 
     int cnt = 0;
     for (int i = 0; i < N; ++i) {
         for (int j = i + 1; j < N - 1; ++j) {
-            if (distance(a[i], a[j]) < R) cnt++;
+            if (Distance(a[i], a[j]) < R) cnt++;
         }
     }
 

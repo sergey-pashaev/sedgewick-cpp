@@ -25,9 +25,9 @@ int main() {
     const char* input = "FIRS*T*IN***FI*RS***T*OUT*****";
     while (*input) {
         if (*input == '*')
-            q.get();
+            q.Get();
         else
-            q.put(*input);
+            q.Put(*input);
 
         ++input;
     }

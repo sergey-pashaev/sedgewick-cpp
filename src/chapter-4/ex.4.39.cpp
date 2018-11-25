@@ -21,8 +21,8 @@ bool fail_alloc = false;
 template <typename T>
 class Queue {
    private:
-    struct node {
-        explicit node(T v) : item{v}, next{nullptr} {}
+    struct Node {
+        explicit Node(T v) : item{v}, next{nullptr} {}
 
         void* operator new(std::size_t size) {
             if (fail_alloc) {
@@ -35,11 +35,11 @@ class Queue {
         void operator delete(void* p) { ::free(p); }
 
         T item;
-        node* next;
+        Node* next;
     };
-    typedef node* link;
-    link head_;
-    link tail_;
+    typedef Node* Link;
+    Link head_;
+    Link tail_;
 
    public:
     explicit Queue(int) : head_{nullptr}, tail_{nullptr} {}
@@ -53,12 +53,12 @@ class Queue {
         }
     }
 
-    bool empty() const { return head_ == nullptr; }
+    bool Empty() const { return head_ == nullptr; }
 
-    void put(T x) {
-        link t = tail_;
+    void Put(T x) {
+        Link t = tail_;
         try {
-            tail_ = new node(x);
+            tail_ = new Node(x);
         } catch (const std::bad_alloc& e) {
             throw std::length_error("queue is full (out of memory)");
         }
@@ -70,46 +70,46 @@ class Queue {
         }
     }
 
-    T get() {
-        if (empty()) error("queue is empty");
+    T Get() {
+        if (Empty()) Error("queue is empty");
         T v = head_->item;
-        link t = head_->next;
+        Link t = head_->next;
         delete head_;
         head_ = t;
         return v;
     }
 
    private:
-    void error(const char* msg) const { throw std::length_error(msg); }
+    void Error(const char* msg) const { throw std::length_error(msg); }
 };
 
 TEST_CASE("normal usage") {
     Queue<int> q{3};
-    q.put(1);
-    REQUIRE(q.get() == 1);
-    q.put(2);
-    q.put(3);
-    REQUIRE(q.get() == 2);
-    q.put(4);
-    REQUIRE(q.get() == 3);
-    q.put(5);
-    q.put(6);
-    REQUIRE(q.get() == 4);
-    REQUIRE(q.get() == 5);
-    REQUIRE(q.get() == 6);
+    q.Put(1);
+    REQUIRE(q.Get() == 1);
+    q.Put(2);
+    q.Put(3);
+    REQUIRE(q.Get() == 2);
+    q.Put(4);
+    REQUIRE(q.Get() == 3);
+    q.Put(5);
+    q.Put(6);
+    REQUIRE(q.Get() == 4);
+    REQUIRE(q.Get() == 5);
+    REQUIRE(q.Get() == 6);
 }
 
 TEST_CASE("empty queue") {
     Queue<int> q{3};
-    REQUIRE_THROWS_AS(q.get(), std::length_error);
+    REQUIRE_THROWS_AS(q.Get(), std::length_error);
 }
 
 TEST_CASE("full queue") {
     Queue<int> q{3};
-    q.put(1);
-    q.put(2);
-    q.put(3);
+    q.Put(1);
+    q.Put(2);
+    q.Put(3);
     fail_alloc = true;
-    REQUIRE_THROWS_AS(q.put(4), std::length_error);
+    REQUIRE_THROWS_AS(q.Put(4), std::length_error);
     fail_alloc = false;
 }

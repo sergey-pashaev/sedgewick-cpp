@@ -9,14 +9,14 @@
 #include <cstdlib>
 #include <iostream>
 
-struct node {
+struct Node {
     int item;
-    node* next;
+    Node* next;
 
-    node(int x, node* t) : item(x), next(t) {}
+    Node(int x, Node* t) : item(x), next(t) {}
 };
 
-typedef node* link;
+typedef Node* Link;
 
 int usage(const char* bin) {
     std::cout << "Usage: " << bin << " <positive int N> <positive int M>\n";

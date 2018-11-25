@@ -18,10 +18,10 @@ int main() {
 
     for (std::size_t i = 0; i < N; ++i) {
         if (a[i] == ')') {
-            std::cout << ops.pop() << (i + 1 < N ? ' ' : '\n');
+            std::cout << ops.Pop() << (i + 1 < N ? ' ' : '\n');
         }
         if (a[i] == '+' || a[i] == '*') {
-            ops.push(a[i]);
+            ops.Push(a[i]);
         }
         if (a[i] >= '0' && a[i] <= '9') {
             std::cout << a[i] << (i + 1 < N ? ' ' : '\n');

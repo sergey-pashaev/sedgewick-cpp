@@ -11,17 +11,17 @@
 #include <random>
 #include <vector>
 
-struct node {
+struct Node {
     int item;
-    node* next;
+    Node* next;
 
-    node(int x, node* t) : item(x), next(t) {}
+    Node(int x, Node* t) : item(x), next(t) {}
 };
 
-typedef node* link;
+typedef Node* Link;
 
-void print(link x) {
-    for (link cur = x; cur; cur = cur->next) {
+void Print(Link x) {
+    for (Link cur = x; cur; cur = cur->next) {
         std::cout << cur->item << (cur->next ? " " : "");
     }
     std::cout << '\n';
@@ -46,16 +46,16 @@ int main(int argc, char* argv[]) {
     std::mt19937 gen(rd());
     std::uniform_int_distribution<int> dist(0, 1000);
 
-    node heada(0, nullptr);
-    link a = &heada;
-    link t = a;
+    Node heada(0, nullptr);
+    Link a = &heada;
+    Link t = a;
 
     for (int i = 0; i < N; ++i) {
-        t = (t->next = new node(dist(gen), nullptr));
+        t = (t->next = new Node(dist(gen), nullptr));
     }
 
-    node headb(0, nullptr);
-    link u, x, b = &headb;
+    Node headb(0, nullptr);
+    Link u, x, b = &headb;
 
     // loop over unsorted list
     for (t = a->next; t; t = u) {

@@ -22,22 +22,22 @@ class Queue {
 
     ~Queue() { delete[] q_; }
 
-    bool empty() const { return head_ % n_ == tail_; }
+    bool Empty() const { return head_ % n_ == tail_; }
 
-    void put(T v) {
-        if (tail_ + 1 == head_) error("queue is full");
+    void Put(T v) {
+        if (tail_ + 1 == head_) Error("queue is full");
         q_[tail_++] = v;
         tail_ %= n_;
     }
 
-    T get() {
-        if (empty()) error("queue is empty");
+    T Get() {
+        if (Empty()) Error("queue is empty");
         head_ %= n_;
         return q_[head_++];
     }
 
    private:
-    void error(const char* msg) const { throw std::length_error(msg); }
+    void Error(const char* msg) const { throw std::length_error(msg); }
 
    private:
     int n_;
@@ -48,29 +48,29 @@ class Queue {
 
 TEST_CASE("normal usage") {
     Queue<int> q{3};
-    q.put(1);
-    REQUIRE(q.get() == 1);
-    q.put(2);
-    q.put(3);
-    REQUIRE(q.get() == 2);
-    q.put(4);
-    REQUIRE(q.get() == 3);
-    q.put(5);
-    q.put(6);
-    REQUIRE(q.get() == 4);
-    REQUIRE(q.get() == 5);
-    REQUIRE(q.get() == 6);
+    q.Put(1);
+    REQUIRE(q.Get() == 1);
+    q.Put(2);
+    q.Put(3);
+    REQUIRE(q.Get() == 2);
+    q.Put(4);
+    REQUIRE(q.Get() == 3);
+    q.Put(5);
+    q.Put(6);
+    REQUIRE(q.Get() == 4);
+    REQUIRE(q.Get() == 5);
+    REQUIRE(q.Get() == 6);
 }
 
 TEST_CASE("empty queue") {
     Queue<int> q{3};
-    REQUIRE_THROWS_AS(q.get(), std::length_error);
+    REQUIRE_THROWS_AS(q.Get(), std::length_error);
 }
 
 TEST_CASE("full queue") {
     Queue<int> q{3};
-    q.put(1);
-    q.put(2);
-    q.put(3);
-    REQUIRE_THROWS_AS(q.put(4), std::length_error);
+    q.Put(1);
+    q.Put(2);
+    q.Put(3);
+    REQUIRE_THROWS_AS(q.Put(4), std::length_error);
 }

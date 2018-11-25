@@ -15,21 +15,21 @@
 #include <psv/array.h>
 
 template <typename T>
-struct mnode {
+struct MNode {
     T v;
-    mnode* next_row;
-    mnode* next_col;
+    MNode* next_row;
+    MNode* next_col;
     std::size_t row;
     std::size_t col;
 
-    mnode() : v(0), next_row(nullptr), next_col(nullptr), row(0), col(0) {}
+    MNode() : v(0), next_row(nullptr), next_col(nullptr), row(0), col(0) {}
 
-    mnode(T v, std::size_t row, std::size_t col)
+    MNode(T v, std::size_t row, std::size_t col)
         : v(v), next_row(nullptr), next_col(nullptr), row(row), col(col) {}
 };
 
 template <typename T>
-using link = mnode<T>*;
+using Link = MNode<T>*;
 
 int usage(const char* bin) {
     std::cout << "Usage: " << bin << " <positive int N - matrix size>\n";
@@ -52,21 +52,21 @@ int main(int argc, char* argv[]) {
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<int> dist(0, 1);
-    arr.for_each([&dist, &gen](int& v) { v = dist(gen); });
+    arr.ForEach([&dist, &gen](int& v) { v = dist(gen); });
 
     std::cout << "Array: \n" << arr << '\n';
 
     // transform
-    mnode<int>* rhead = new mnode<int>[arr.rows_];
-    mnode<int>* chead = new mnode<int>[arr.cols_];
+    MNode<int>* rhead = new MNode<int>[arr.rows_];
+    MNode<int>* chead = new MNode<int>[arr.cols_];
 
     // stich by columns
     for (std::size_t i = 0; i < arr.rows_; ++i) {
-        mnode<int>* cur_row = nullptr;
+        MNode<int>* cur_row = nullptr;
         for (std::size_t j = 0; j < arr.cols_; ++j) {
             if (!arr.data[i][j]) continue;
 
-            auto node = new mnode<int>{arr.data[i][j], i, j};
+            auto node = new MNode<int>{arr.data[i][j], i, j};
             if (!cur_row) {
                 rhead[i].next_col = node;
             } else {
@@ -79,7 +79,7 @@ int main(int argc, char* argv[]) {
 
     // stich by rows
     for (std::size_t j = 0; j < arr.cols_; ++j) {
-        mnode<int>* cur_col = &chead[j];
+        MNode<int>* cur_col = &chead[j];
         for (std::size_t i = 0; i < arr.rows_; ++i) {
             auto node = rhead[i].next_col;
             while (node) {

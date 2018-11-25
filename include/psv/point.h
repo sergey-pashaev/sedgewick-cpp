@@ -17,19 +17,19 @@ class Point {
     T X() const { return x_; }
     T Y() const { return y_; }
 
-    T distance() const { return std::sqrt(x_ * x_ + y_ * y_); }
+    T Distance() const { return std::sqrt(x_ * x_ + y_ * y_); }
 
-    T distance(const Point& other) const {
+    T Distance(const Point& other) const {
         const T dx = this->x_ - other.x_;
         const T dy = this->y_ - other.y_;
         return std::sqrt(dx * dx + dy * dy);
     }
 
     bool operator==(const Point& other) const {
-        return distance(other) < epsilon_;
+        return Distance(other) < epsilon_;
     }
 
-    static Point random() { return Point(dist_(gen_), dist_(gen_)); }
+    static Point Random() { return Point(dist_(gen_), dist_(gen_)); }
 
     template <typename U>
     friend std::ostream& operator<<(std::ostream& os, const Point<U>& point);
@@ -67,24 +67,24 @@ class PolarPoint {
     PolarPoint(T r, T phi) : r_(r), phi_(phi) {}
 
     PolarPoint(const Point<T>& p)
-        : r_(p.distance()), phi_(std::atan2(p.Y(), p.X())) {}
+        : r_(p.Distance()), phi_(std::atan2(p.Y(), p.X())) {}
 
     T R() const { return r_; }
     T Phi() const { return phi_; }
 
-    T distance(const PolarPoint& other) const {
+    T Distance(const PolarPoint& other) const {
         // sqrt(r1^2 + r2^2 - 2*r1*r2*cos(phi2 - phi1)
         return std::sqrt(r_ * r_ + other.r_ * other.r_ -
                          2 * r_ * other.r_ * std::cos(other.phi_ - phi_));
     }
 
-    T distance() const { return r_; }
+    T Distance() const { return r_; }
 
     bool operator==(const Point<T>& other) const {
-        return distance(other) < Point<T>::epsilon_;
+        return Distance(other) < Point<T>::epsilon_;
     }
 
-    static PolarPoint random() { return PolarPoint(Point<T>::random()); }
+    static PolarPoint Random() { return PolarPoint(Point<T>::random()); }
 
     template <typename U>
     friend std::ostream& operator<<(std::ostream& os,

@@ -7,14 +7,14 @@
 #include <cstdlib>
 #include <iostream>
 
-struct node {
+struct Node {
     int item;
-    node* next;
+    Node* next;
 
-    node(int x, node* t) : item(x), next(t) {}
+    Node(int x, Node* t) : item(x), next(t) {}
 };
 
-typedef node* link;
+typedef Node* Link;
 
 int usage(const char* bin) {
     std::cout << "Usage: " << bin << " <positive int N> <positive int M>\n";
@@ -32,12 +32,12 @@ int main(int argc, char* argv[]) {
         return usage(argv[0]);
     }
 
-    link t = new node(1, 0);
+    Link t = new Node(1, 0);
     t->next = t;
-    link x = t;
+    Link x = t;
 
     for (int i = 2; i <= N; ++i) {
-        x = (x->next = new node(i, t));
+        x = (x->next = new Node(i, t));
     }
 
     while (x != x->next) {

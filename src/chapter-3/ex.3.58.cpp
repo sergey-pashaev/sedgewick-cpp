@@ -20,7 +20,7 @@ int usage(const char* bin) {
     return 1;
 }
 
-bool find(const char* str, const char* pattern) {
+bool Find(const char* str, const char* pattern) {
     auto ssize = psv::strlen(str);
     auto psize = psv::strlen(pattern);
 
@@ -46,7 +46,7 @@ int main(int argc, char* argv[]) {
     const char* str = argv[1];
     std::string word;
     while (std::cin >> word) {
-        if (find(str, word.c_str())) std::cout << word << '\n';
+        if (Find(str, word.c_str())) std::cout << word << '\n';
     }
 
     return 0;

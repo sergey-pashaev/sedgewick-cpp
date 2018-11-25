@@ -11,7 +11,7 @@
 
 #include "point.h"
 
-float randFloat() { return 1.0 * std::rand() / RAND_MAX; }
+float RandomFloat() { return 1.0 * std::rand() / RAND_MAX; }
 
 int usage(const char* bin) {
     std::cout << "Usage: " << bin << " <positive int N> <float radius R>\n";
@@ -33,14 +33,14 @@ int main(int argc, char* argv[]) {
     float R = std::atof(argv[2]);
     Point* a = new Point[N];
     for (int i = 0; i < N; ++i) {
-        a[i].x = randFloat();
-        a[i].y = randFloat();
+        a[i].x = RandomFloat();
+        a[i].y = RandomFloat();
     }
 
     int cnt = 0;
     for (int i = 0; i < N; ++i) {
         for (int j = i + 1; j < N; ++j) {
-            if (distance(a[i], a[j]) < R) cnt++;
+            if (Distance(a[i], a[j]) < R) cnt++;
         }
     }
 

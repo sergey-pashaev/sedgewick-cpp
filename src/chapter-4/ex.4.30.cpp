@@ -21,7 +21,7 @@ int main(int argc, char* argv[]) {
     UF info(N);
     int p, q;
     while (std::cin >> p >> q) {
-        if (info.unite(p, q)) {
+        if (info.Unite(p, q)) {
             std::cout << ' ' << p << ' ' << q << '\n';
         }
     }

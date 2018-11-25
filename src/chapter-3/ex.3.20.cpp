@@ -14,7 +14,7 @@
 #include <ctime>
 #include <iostream>
 
-int heads(int N, int lambda) { return std::rand() < (RAND_MAX / N) * lambda; }
+int Heads(int N, int lambda) { return std::rand() < (RAND_MAX / N) * lambda; }
 
 int usage(const char* bin) {
     std::cout << "Usage: " << bin
@@ -42,7 +42,7 @@ int main(int argc, char* argv[]) {
 
     for (i = 0; i < M; ++i, f[cnt]++)
         for (cnt = 0, j = 0; j <= N; ++j)
-            if (heads(N, L)) ++cnt;
+            if (Heads(N, L)) ++cnt;
 
     for (j = 0; j <= N; ++j) {
         if (f[j] == 0) std::cout << '.';

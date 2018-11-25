@@ -13,16 +13,16 @@
 #include <typeinfo>
 
 template <typename T>
-void limits() {
+void Limits() {
     std::cout << typeid(T).name() << ' ' << std::numeric_limits<T>::min() << ' '
               << std::numeric_limits<T>::max() << '\n';
 }
 
 int main() {
-    limits<int>();
-    limits<long int>();
-    limits<short int>();
-    limits<float>();
-    limits<double>();
+    Limits<int>();
+    Limits<long int>();
+    Limits<short int>();
+    Limits<float>();
+    Limits<double>();
     return 0;
 }

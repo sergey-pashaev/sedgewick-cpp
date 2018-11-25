@@ -7,7 +7,7 @@
 
 // ru: Выделение памяти под двумерный массив
 
-int** malloc2d(int r, int c) {
+int** Malloc2D(int r, int c) {
     int** t = new int*[r];
     for (int i = 0; i < r; ++i) {
         t[i] = new int[c];
@@ -16,7 +16,7 @@ int** malloc2d(int r, int c) {
     return t;
 }
 
-void free2d(int** p, int r) {
+void Free2D(int** p, int r) {
     for (int i = 0; i < r; ++i) {
         delete[] p[i];
     }

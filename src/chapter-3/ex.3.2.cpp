@@ -19,7 +19,7 @@
 #include <vector>
 
 // old way & deprecated rand()
-void measure_rand_int(int R, int N) {
+void MeasureRandomInt(int R, int N) {
     double avg = 0.0;
     double stddev = 0.0;
     std::srand(std::time(nullptr));
@@ -35,7 +35,7 @@ void measure_rand_int(int R, int N) {
 }
 
 // modern way
-void measure_rand_int_modern(int R, int N) {
+void MeasureRandomIntModern(int R, int N) {
     double avg = 0.0;
     double stddev = 0.0;
     std::random_device rd;
@@ -58,9 +58,9 @@ int main() {
     for (int r : R) {
         for (int n : N) {
             std::cout << "old: ";
-            measure_rand_int(r, n);
+            MeasureRandomInt(r, n);
             std::cout << "new: ";
-            measure_rand_int_modern(r, n);
+            MeasureRandomIntModern(r, n);
         }
     }
     return 0;

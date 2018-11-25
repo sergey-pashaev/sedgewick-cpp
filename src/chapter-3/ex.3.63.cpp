@@ -14,7 +14,7 @@
 #include <cstring>
 #include <iostream>
 
-int compare(const void* i, const void* j) {
+int Compare(const void* i, const void* j) {
     return strcmp(*(char**)i, *(char**)j);
 }
 
@@ -33,7 +33,7 @@ int main() {
         a[N] = strcpy(w, buf);
     }
 
-    qsort(a, N, sizeof(char*), compare);
+    qsort(a, N, sizeof(char*), Compare);
 
     for (int i = 0; i < N; ++i) std::cout << a[i] << '\n';
 

@@ -31,7 +31,7 @@ int main(int argc, char* argv[]) {
     int rows = std::atoi(argv[1]);
     int cols = std::atoi(argv[2]);
 
-    psv::DrawCLIGraph(N_MIN, N_MAX, [](int n) { return josephus(n, M); }, 0,
+    psv::DrawCLIGraph(N_MIN, N_MAX, [](int n) { return Josephus(n, M); }, 0,
                       N_MAX, rows, cols, "N", "Node number");
 
     return 0;

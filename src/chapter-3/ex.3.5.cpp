@@ -14,7 +14,7 @@
 #include <vector>
 
 // old way & deprecated rand()
-void measure_rand_bool(int N) {
+void MeasureRandomBool(int N) {
     double avg = 0.0;
     double stddev = 0.0;
     std::srand(std::time(nullptr));
@@ -29,7 +29,7 @@ void measure_rand_bool(int N) {
 }
 
 // modern way
-void measure_rand_bool_modern(int N) {
+void MeasureRandomBoolModern(int N) {
     double avg = 0.0;
     double stddev = 0.0;
     std::random_device rd;
@@ -49,9 +49,9 @@ int main() {
     std::vector<int> N = {1000, 10'000, 100'000, 1'000'000};
     for (int n : N) {
         std::cout << "old: ";
-        measure_rand_bool(n);
+        MeasureRandomBool(n);
         std::cout << "new: ";
-        measure_rand_bool_modern(n);
+        MeasureRandomBoolModern(n);
     }
     return 0;
 }

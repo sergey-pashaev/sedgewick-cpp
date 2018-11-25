@@ -33,8 +33,8 @@ int main(int argc, char* argv[]) {
     int max_x = std::atoi(argv[2]);
     int max_y = std::atoi(argv[3]);
 
-    psv::DrawCLIGraph(1, N, prime_numbers_count, 0, prime_numbers_count(N),
-                      max_x, max_y, "N", "primes");
+    psv::DrawCLIGraph(1, N, PrimeNumbersCount, 0, PrimeNumbersCount(N), max_x,
+                      max_y, "N", "primes");
 
     return 0;
 }

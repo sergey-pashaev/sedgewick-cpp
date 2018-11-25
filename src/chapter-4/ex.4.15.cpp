@@ -25,48 +25,48 @@
 #include <psv/stack.h>
 
 template <typename T>
-T eval_postfix(const std::string& expr) {
+T EvalPostfix(const std::string& expr) {
     const auto size = expr.size();
     psv::Stack<T> value(size);
 
     for (std::size_t i = 0; i < size; ++i) {
-        if (expr[i] == '+') value.push(value.pop() + value.pop());
+        if (expr[i] == '+') value.Push(value.Pop() + value.Pop());
         if (expr[i] == '-') {
-            auto v1 = value.pop();
-            auto v2 = value.pop();
-            value.push(v2 - v1);
+            auto v1 = value.Pop();
+            auto v2 = value.Pop();
+            value.Push(v2 - v1);
         }
-        if (expr[i] == '*') value.push(value.pop() * value.pop());
+        if (expr[i] == '*') value.Push(value.Pop() * value.Pop());
         if (expr[i] == '/') {
-            auto v1 = value.pop();
+            auto v1 = value.Pop();
             if (v1 == 0) throw std::overflow_error("divide by zero");
-            auto v2 = value.pop();
-            value.push(v2 / v1);
+            auto v2 = value.Pop();
+            value.Push(v2 / v1);
         }
         if (expr[i] == '$') {
-            value.push(std::sqrt(value.pop()));
+            value.Push(std::sqrt(value.Pop()));
         }
         if (expr[i] == '!') {
-            value.push(-value.pop());
+            value.Push(-value.Pop());
         }
 
-        if (expr[i] >= '0' && expr[i] <= '9') value.push(0);
+        if (expr[i] >= '0' && expr[i] <= '9') value.Push(0);
         while (expr[i] >= '0' && expr[i] <= '9')
-            value.push(10 * value.pop() + expr[i++] - '0');
+            value.Push(10 * value.Pop() + expr[i++] - '0');
     }
 
-    return value.pop();
+    return value.Pop();
 }
 
-bool is_num(char c) { return c >= '0' && c <= '9'; }
-bool is_var(char c) { return std::isalpha(c); }
-bool is_op(char c) {
+bool IsNum(char c) { return c >= '0' && c <= '9'; }
+bool IsVar(char c) { return std::isalpha(c); }
+bool IsOp(char c) {
     return c == '+' || c == '-' || c == '*' || c == '/' || c == '$';
 }
-bool is_unary(char c) { return c == '-' || c == '$' || c == '!'; }
-bool is_right_assoc(char c) { return c == '$' || c == '!'; }
+bool IsUnary(char c) { return c == '-' || c == '$' || c == '!'; }
+bool IsRightAssoc(char c) { return c == '$' || c == '!'; }
 
-int precedence(char op) {
+int Precedence(char op) {
     switch (op) {
         case '(':
             return 0;
@@ -84,56 +84,56 @@ int precedence(char op) {
     throw std::invalid_argument("invalid operator");
 }
 
-std::string to_postfix(const std::string& expr) {
+std::string ToPostfix(const std::string& expr) {
     const auto size = expr.size();
     psv::Stack<char> st(size);
     std::string ret;
     bool may_unary = true;
     for (std::size_t i = 0; i < size;) {
-        if (is_num(expr[i])) {
+        if (IsNum(expr[i])) {
             // number
-            while (is_num(expr[i])) {
+            while (IsNum(expr[i])) {
                 ret.push_back(expr[i++]);
             }
             ret.push_back(' ');
             may_unary = false;
-        } else if (is_var(expr[i])) {
+        } else if (IsVar(expr[i])) {
             // var
-            while (is_var(expr[i])) {
+            while (IsVar(expr[i])) {
                 ret.push_back(expr[i++]);
             }
             ret.push_back(' ');
             may_unary = false;
         } else if (expr[i] == '(') {
-            st.push(expr[i]);
+            st.Push(expr[i]);
             ++i;
             may_unary = true;
         } else if (expr[i] == ')') {
-            while (!st.empty() && st.top() != '(') {
-                ret.push_back(st.pop());
+            while (!st.Empty() && st.Top() != '(') {
+                ret.push_back(st.Pop());
                 ret.push_back(' ');
             }
-            if (!st.empty() && st.top() == '(') st.pop();
+            if (!st.Empty() && st.Top() == '(') st.Pop();
             ++i;
             may_unary = false;
-        } else if (is_op(expr[i])) {
+        } else if (IsOp(expr[i])) {
             // operator
             char op = expr[i];
-            if (is_unary(op) && may_unary) {
+            if (IsUnary(op) && may_unary) {
                 if (op == '-') {
                     op = '!';
                 }
             }
 
-            while (!st.empty() && st.top() != '(' &&
-                   ((is_right_assoc(op) &&
-                     precedence(st.top()) > precedence(op)) ||
-                    (!is_right_assoc(op) &&
-                     precedence(st.top()) >= precedence(op)))) {
-                ret.push_back(st.pop());
+            while (
+                !st.Empty() && st.Top() != '(' &&
+                ((IsRightAssoc(op) && Precedence(st.Top()) > Precedence(op)) ||
+                 (!IsRightAssoc(op) &&
+                  Precedence(st.Top()) >= Precedence(op)))) {
+                ret.push_back(st.Pop());
                 ret.push_back(' ');
             }
-            st.push(op);
+            st.Push(op);
             ++i;
             may_unary = true;
         } else {
@@ -142,8 +142,8 @@ std::string to_postfix(const std::string& expr) {
         }
     }
 
-    while (!st.empty()) {
-        auto c = st.pop();
+    while (!st.Empty()) {
+        auto c = st.Pop();
         if (c != '(') {
             ret.push_back(c);
             ret.push_back(' ');
@@ -155,7 +155,7 @@ std::string to_postfix(const std::string& expr) {
 }
 
 TEST_CASE("eval_postfix") {
-    REQUIRE(eval_postfix<double>(
-                to_postfix("((-(-1) + $((-1) * (-1) - (4 * (-1)))) / 2)")) ==
+    REQUIRE(EvalPostfix<double>(
+                ToPostfix("((-(-1) + $((-1) * (-1) - (4 * (-1)))) / 2)")) ==
             Approx(1.618034));
 }

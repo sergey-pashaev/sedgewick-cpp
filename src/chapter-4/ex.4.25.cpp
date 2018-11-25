@@ -32,19 +32,19 @@ class Stack {
 
    public:
     explicit Stack(std::size_t max) : list_{max}, n_{0} {}
-    bool empty() const { return !n_; }
-    void push(T v) {
+    bool Empty() const { return !n_; }
+    void Push(T v) {
         list_.item[n_] = v;
         list_.next[n_] = n_ + 1;
         n_++;
     }
-    T pop() {
+    T Pop() {
         --n_;
         T v = list_.item[n_];
         list_.next[n_] = 0;
         return v;
     }
-    std::size_t size() const { return n_; }
+    std::size_t Size() const { return n_; }
 
    private:
     List list_;
@@ -53,10 +53,10 @@ class Stack {
 
 TEST_CASE("stack") {
     Stack<int> s{10};
-    s.push(3);
-    s.push(2);
-    REQUIRE(s.pop() == 2);
-    s.push(1);
-    REQUIRE(s.pop() == 1);
-    REQUIRE(s.pop() == 3);
+    s.Push(3);
+    s.Push(2);
+    REQUIRE(s.Pop() == 2);
+    s.Push(1);
+    REQUIRE(s.Pop() == 1);
+    REQUIRE(s.Pop() == 3);
 }

@@ -22,9 +22,9 @@ int main() {
     const char* input = "EAS*Y*QUE***ST***IO*N***";
     while (*input) {
         if (*input == '*')
-            std::cout << q.get() << '\n';
+            std::cout << q.Get() << '\n';
         else
-            q.put(*input);
+            q.Put(*input);
 
         ++input;
     }

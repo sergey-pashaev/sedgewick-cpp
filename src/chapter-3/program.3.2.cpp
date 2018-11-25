@@ -10,7 +10,7 @@
 
 typedef int Number;
 
-Number randNum() { return rand(); }
+Number RandNum() { return rand(); }
 
 int usage(const char* bin) {
     std::cout << "Usage: " << bin << " <positive int N>\n";
@@ -31,7 +31,7 @@ int main(int argc, char* argv[]) {
     float m2 = 0.0;
 
     for (int i = 0; i < N; ++i) {
-        Number x = randNum();
+        Number x = RandNum();
         m1 += ((float)x) / N;
         m2 += ((float)x * x) / N;
     }

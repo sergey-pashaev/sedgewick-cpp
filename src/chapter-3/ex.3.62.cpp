@@ -8,7 +8,7 @@
 
 #include <iostream>
 
-int*** malloc3d(int x, int y, int z) {
+int*** Malloc3D(int x, int y, int z) {
     int*** a = new int**[x];
     for (int i = 0; i < x; ++i) {
         a[i] = new int*[y];
@@ -20,7 +20,7 @@ int*** malloc3d(int x, int y, int z) {
     return a;
 }
 
-void free3d(int*** a, int x, int y) {
+void Free3D(int*** a, int x, int y) {
     for (int i = 0; i < x; ++i) {
         for (int j = 0; j < y; ++j) {
             delete[] a[i][j];
@@ -50,13 +50,13 @@ int main(int argc, char* argv[]) {
         return usage(argv[0]);
     }
 
-    auto p = malloc3d(X, Y, Z);
+    auto p = Malloc3D(X, Y, Z);
 
     for (int k = 0; k < Z; ++k)
         for (int j = 0; j < Y; ++j)
             for (int i = 0; i < X; ++i) p[i][j][k] = 1;
 
-    free3d(p, X, Y);
+    Free3D(p, X, Y);
 
     return 0;
 }

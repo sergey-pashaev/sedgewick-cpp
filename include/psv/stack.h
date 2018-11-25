@@ -12,19 +12,19 @@ class Stack {
     explicit Stack(std::size_t n) : capacity_(n), size_(0), data_(new T[n]) {}
     ~Stack() { delete[] data_; }
 
-    bool empty() const { return size_ == 0; }
+    bool Empty() const { return size_ == 0; }
 
-    T top() {
+    T Top() {
         if (!size_) throw std::length_error("stack is empty");
         return data_[size_ - 1];
     }
 
-    T pop() {
+    T Pop() {
         if (!size_) throw std::length_error("stack is empty");
         return data_[--size_];
     }
 
-    void push(T v) {
+    void Push(T v) {
         if (size_ == capacity_)
             throw std::length_error("stack capacity reached");
         data_[size_++] = v;

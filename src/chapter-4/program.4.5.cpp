@@ -17,14 +17,14 @@ int main() {
     psv::Stack<int> save(N);
 
     for (std::size_t i = 0; i < N; ++i) {
-        if (a[i] == '+') save.push(save.pop() + save.pop());
-        if (a[i] == '*') save.push(save.pop() * save.pop());
-        if (a[i] >= '0' && a[i] <= '9') save.push(0);
+        if (a[i] == '+') save.Push(save.Pop() + save.Pop());
+        if (a[i] == '*') save.Push(save.Pop() * save.Pop());
+        if (a[i] >= '0' && a[i] <= '9') save.Push(0);
         while (a[i] >= '0' && a[i] <= '9')
-            save.push(10 * save.pop() + a[i++] - '0');
+            save.Push(10 * save.Pop() + a[i++] - '0');
     }
 
-    std::cout << save.pop() << '\n';
+    std::cout << save.Pop() << '\n';
 
     return 0;
 }

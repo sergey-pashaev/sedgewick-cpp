@@ -17,11 +17,11 @@ class UF {
         delete[] sz_;
     }
 
-    int find(int p, int q) { return find(p) == find(q); }
+    int Find(int p, int q) { return Find(p) == Find(q); }
 
-    void unite(int p, int q) {
-        int i = find(p);
-        int j = find(q);
+    void Unite(int p, int q) {
+        int i = Find(p);
+        int j = Find(q);
         if (i == j) return;
         if (sz_[i] < sz_[j]) {
             id_[i] = j;
@@ -33,7 +33,7 @@ class UF {
     }
 
    private:
-    int find(int x) {
+    int Find(int x) {
         while (x != id_[x]) x = id_[x];
         return x;
     }
