@@ -12,6 +12,11 @@ class UF {
         }
     }
 
+    ~UF() {
+        delete[] id_;
+        delete[] sz_;
+    }
+
     int find(int p, int q) { return find(p) == find(q); }
 
     void unite(int p, int q) {

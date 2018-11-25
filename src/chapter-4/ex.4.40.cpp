@@ -26,6 +26,8 @@ class Deque {
     explicit Deque(int capacity)
         : n_(capacity + 1), q_(new T[n_]), head_(n_), tail_(0) {}
 
+    ~Deque() { delete[] q_; }
+
     bool Empty() const { return head_ % n_ == tail_; }
 
     bool Full() const { return tail_ + 1 == head_; }

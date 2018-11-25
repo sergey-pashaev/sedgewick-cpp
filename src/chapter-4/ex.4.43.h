@@ -11,6 +11,7 @@ template <typename T>
 class Deque {
    public:
     Deque(int);
+    ~Deque();
     bool Empty() const;
     void PushFront(T v);
     void PushBack(T v);

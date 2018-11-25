@@ -14,6 +14,7 @@ template <typename T>
 class Stack {
    public:
     explicit Stack(int max) : s_{new T[max]}, n_{0}, cap_{max} {}
+    ~Stack() { delete[] s_; }
     bool empty() const { return n_ == 0; }
     void push(T v) {
         if (n_ == cap_) error("stack capacity reached");

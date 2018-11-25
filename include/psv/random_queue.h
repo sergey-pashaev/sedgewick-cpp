@@ -12,6 +12,8 @@ class RandomQueue {
     explicit RandomQueue(int capacity)
         : n_(capacity + 1), q_(new T[n_]), head_(n_), tail_(0) {}
 
+    ~RandomQueue() { delete[] q_; }
+
     bool Empty() const { return head_ % n_ == tail_; }
 
     int Size() const {

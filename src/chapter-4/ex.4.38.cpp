@@ -20,6 +20,8 @@ class Queue {
     explicit Queue(int capacity)
         : n_(capacity + 1), q_(new T[n_]), head_(n_), tail_(0) {}
 
+    ~Queue() { delete[] q_; }
+
     bool empty() const { return head_ % n_ == tail_; }
 
     void put(T v) {

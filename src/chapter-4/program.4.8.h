@@ -22,6 +22,14 @@ class Stack {
 
    public:
     Stack(int) : head_{nullptr} {}
+    ~Stack() {
+        Link cur = head_;
+        while (cur) {
+            Link next = cur->next;
+            delete cur;
+            cur = next;
+        }
+    }
     bool empty() const { return !head_; }
     void push(T v) {
         try {

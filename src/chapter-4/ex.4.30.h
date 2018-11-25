@@ -21,6 +21,11 @@ class UF {
         }
     }
 
+    ~UF() {
+        delete[] id_;
+        delete[] sz_;
+    }
+
     bool unite(int p, int q) {
         int i = find(p);
         int j = find(q);

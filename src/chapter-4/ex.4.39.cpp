@@ -44,6 +44,15 @@ class Queue {
    public:
     explicit Queue(int) : head_{nullptr}, tail_{nullptr} {}
 
+    ~Queue() {
+        auto cur = head_;
+        while (cur) {
+            auto next = cur->next;
+            delete cur;
+            cur = next;
+        }
+    }
+
     bool empty() const { return head_ == nullptr; }
 
     void put(T x) {

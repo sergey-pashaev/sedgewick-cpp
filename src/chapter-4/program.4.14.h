@@ -23,6 +23,15 @@ class Queue {
    public:
     Queue(int) { head_ = nullptr; }
 
+    ~Queue() {
+        link cur = head_;
+        while (cur) {
+            link next = cur->next;
+            delete cur;
+            cur = next;
+        }
+    }
+
     bool empty() const { return head_ == nullptr; }
 
     void put(T x) {
