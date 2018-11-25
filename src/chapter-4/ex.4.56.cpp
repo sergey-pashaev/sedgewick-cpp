@@ -132,6 +132,7 @@ class UniqueStackRemoveDuplicates {
     bool Empty() const { return !head_; }
 
     void Push(T v) {
+        // FIXME: try block scope too wide
         try {
             if (head_) {
                 Node* cur = head_;
