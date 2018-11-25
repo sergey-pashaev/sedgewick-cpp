@@ -9,7 +9,7 @@ template <typename T>
 class Queue {
    private:
     struct Node {
-        Node(T v) : item{v} {}
+        explicit Node(T v) : item{v} {}
 
         T item;
         Node* next = nullptr;

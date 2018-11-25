@@ -9,7 +9,7 @@ namespace psv {
 template <typename T>
 class Stack {
    public:
-    Stack(std::size_t n) : capacity_(n), size_(0), data_(new T[n]) {}
+    explicit Stack(std::size_t n) : capacity_(n), size_(0), data_(new T[n]) {}
     ~Stack() { delete[] data_; }
 
     bool empty() const { return size_ == 0; }

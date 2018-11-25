@@ -9,7 +9,7 @@ namespace psv {
 template <typename T>
 class RandomQueue {
    public:
-    RandomQueue(int capacity)
+    explicit RandomQueue(int capacity)
         : n_(capacity + 1), q_(new T[n_]), head_(n_), tail_(0) {}
 
     bool Empty() const { return head_ % n_ == tail_; }

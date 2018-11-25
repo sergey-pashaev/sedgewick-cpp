@@ -13,7 +13,7 @@ class Node {
     Node() : next_(nullptr) {}
 
     // create node w/ value & empty link
-    Node(const T& value) : value_(value), next_(nullptr) {}
+    explicit Node(const T& value) : value_(value), next_(nullptr) {}
 
     // get value
     T value() const { return value_; }
@@ -47,7 +47,7 @@ template <typename T>
 size_t BetweenCircular(const Node<T>* a, const Node<T>* b) {
     if (a == b) return 0;
     size_t n = 0;
-    for (const Node<T>* cur = a->next(); cur && cur != a & cur != b;
+    for (const Node<T>* cur = a->next(); cur && cur != a && cur != b;
          cur = cur->next())
         ++n;
     return n;

@@ -22,7 +22,7 @@ template <typename T>
 class Queue {
    private:
     struct node {
-        node(T v) : item{v}, next{nullptr} {}
+        explicit node(T v) : item{v}, next{nullptr} {}
 
         void* operator new(std::size_t size) {
             if (fail_alloc) {
@@ -42,7 +42,7 @@ class Queue {
     link tail_;
 
    public:
-    Queue(int) { head_ = nullptr; }
+    explicit Queue(int) : head_{nullptr}, tail_{nullptr} {}
 
     bool empty() const { return head_ == nullptr; }
 

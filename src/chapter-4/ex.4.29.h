@@ -10,7 +10,7 @@
 
 class UF {
    public:
-    UF(int n) : id_{new int[n]}, sz_{new int[n]} {
+    explicit UF(int n) : id_{new int[n]}, sz_{new int[n]} {
         for (int i = 0; i < n; ++i) {
             id_[i] = i;
             sz_[i] = 1;

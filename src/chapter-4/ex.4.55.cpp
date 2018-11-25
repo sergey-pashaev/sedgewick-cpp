@@ -18,7 +18,8 @@
 template <typename T>
 class UniqueStack {
    public:
-    UniqueStack(std::size_t n) : capacity_(n), size_(0), data_(new T[n]) {}
+    explicit UniqueStack(std::size_t n)
+        : capacity_(n), size_(0), data_(new T[n]) {}
     ~UniqueStack() { delete[] data_; }
 
     bool Empty() const { return size_ == 0; }

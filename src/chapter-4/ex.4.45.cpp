@@ -18,7 +18,7 @@ template <typename T>
 class Deque {
    private:
     struct Node {
-        Node(T v) : item{v} {}
+        explicit Node(T v) : item{v} {}
 
         void* operator new(std::size_t size) {
             if (fail_alloc) {
@@ -36,7 +36,7 @@ class Deque {
     };
 
    public:
-    Deque(int) {}
+    explicit Deque(int) {}
 
     ~Deque() {
         auto t = head_;

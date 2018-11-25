@@ -20,7 +20,7 @@
 template <typename T>
 class DoubleStack {
    public:
-    DoubleStack(int size)
+    explicit DoubleStack(int size)
         : capacity_{size}, beg_{0}, end_{size - 1}, data_{new T[size]} {}
     ~DoubleStack() { delete[] data_; }
 

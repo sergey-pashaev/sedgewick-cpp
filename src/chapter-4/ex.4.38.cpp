@@ -17,7 +17,7 @@
 template <typename T>
 class Queue {
    public:
-    Queue(int capacity)
+    explicit Queue(int capacity)
         : n_(capacity + 1), q_(new T[n_]), head_(n_), tail_(0) {}
 
     bool empty() const { return head_ % n_ == tail_; }

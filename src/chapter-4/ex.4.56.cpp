@@ -21,7 +21,7 @@ class UniqueStackIgnoreDuplicates {
     };
 
    public:
-    UniqueStackIgnoreDuplicates(std::size_t) : head_{nullptr} {}
+    explicit UniqueStackIgnoreDuplicates(std::size_t) : head_{nullptr} {}
 
     ~UniqueStackIgnoreDuplicates() {
         auto cur = head_;
@@ -118,7 +118,7 @@ class UniqueStackRemoveDuplicates {
     };
 
    public:
-    UniqueStackRemoveDuplicates(std::size_t) : head_{nullptr} {}
+    explicit UniqueStackRemoveDuplicates(std::size_t) : head_{nullptr} {}
 
     ~UniqueStackRemoveDuplicates() {
         auto cur = head_;

@@ -14,7 +14,7 @@
 #include <vector>
 
 struct Point {
-    Point(int n) : d(n, 0.0) {}
+    explicit Point(int n) : d(n, 0.0) {}
 
     std::vector<float> d;
 };

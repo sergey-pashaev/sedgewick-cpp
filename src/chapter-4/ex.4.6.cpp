@@ -19,7 +19,7 @@
 
 class Item {
    public:
-    Item(double v) : v_(v) {}
+    explicit Item(double v) : v_(v) {}
 
     bool operator==(const Item &other) const {
         return (std::fabs(v_ - other.v_) /

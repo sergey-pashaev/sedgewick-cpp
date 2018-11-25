@@ -18,7 +18,7 @@ struct node {
     node* next;
 
     node(int x, node* t) : item(x), next(t) {}
-    node(int x) : item(x), next(nullptr) {}
+    explicit node(int x) : item(x), next(nullptr) {}
 };
 
 typedef node* link;

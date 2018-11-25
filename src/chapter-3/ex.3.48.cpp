@@ -10,16 +10,16 @@
 
 #include <psv/list.h>
 
-using psv::Node;
-using psv::Make;
-using psv::Free;
 using psv::Equal;
+using psv::Free;
+using psv::Make;
+using psv::Node;
 using psv::RemoveIf;
 
 const int mod = 2;
 
 struct PositionMod {
-    PositionMod(std::size_t mod) : mod(mod) {}
+    explicit PositionMod(std::size_t mod) : mod(mod) {}
 
     template <typename T>
     bool operator()(const Node<T>*) {

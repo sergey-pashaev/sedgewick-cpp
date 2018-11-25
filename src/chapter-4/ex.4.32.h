@@ -18,7 +18,7 @@ class UF {
     };
 
    public:
-    UF(int n) : nodes_{new node[n]} {
+    explicit UF(int n) : nodes_{new node[n]} {
         for (int i = 0; i < n; ++i) {
             nodes_[i].id = i;
         }

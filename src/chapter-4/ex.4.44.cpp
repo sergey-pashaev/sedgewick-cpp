@@ -14,7 +14,7 @@
 template <typename T>
 class Deque {
    public:
-    Deque(int capacity)
+    explicit Deque(int capacity)
         : n_(capacity + 1), q_(new T[n_]), head_(n_), tail_(0) {}
 
     bool Empty() const { return head_ % n_ == tail_; }

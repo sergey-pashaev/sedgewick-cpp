@@ -15,7 +15,7 @@ class Connectivity {
     int prev_accesses_ = 0;
 
    public:
-    Connectivity(int n = 10) { reset(n); }
+    explicit Connectivity(int n = 10) { reset(n); }
 
     void run(const std::list<std::pair<int, int>>& pairs) {
         for (const auto& p : pairs) {
@@ -139,7 +139,7 @@ class WeightedQuickUnion : public Connectivity {
     void print(int i) override { std::cout << id_[i] << '(' << sz_[i] << ") "; }
 
    public:
-    WeightedQuickUnion(int n = 10) { reset(n); }
+    explicit WeightedQuickUnion(int n = 10) { reset(n); }
 
     bool add_impl(int p, int q) override {
         // slow find
@@ -183,7 +183,9 @@ class WeightedQuickUnionWithPathCompressionByHalving : public Connectivity {
     void print(int i) override { std::cout << id_[i] << '(' << sz_[i] << ") "; }
 
    public:
-    WeightedQuickUnionWithPathCompressionByHalving(int n = 10) { reset(n); }
+    explicit WeightedQuickUnionWithPathCompressionByHalving(int n = 10) {
+        reset(n);
+    }
 
     bool add_impl(int p, int q) override {
         // slow find
@@ -225,7 +227,7 @@ class WeightedQuickUnionWithPathFullCompression : public Connectivity {
     void print(int i) override { std::cout << id_[i] << '(' << sz_[i] << ") "; }
 
    public:
-    WeightedQuickUnionWithPathFullCompression(int n = 10) { reset(n); }
+    explicit WeightedQuickUnionWithPathFullCompression(int n = 10) { reset(n); }
 
     bool add_impl(int p, int q) override {
         // slow find
@@ -273,16 +275,6 @@ class WeightedQuickUnionWithPathFullCompression : public Connectivity {
         std::fill(sz_.begin(), sz_.end(), 1);
     }
 };
-
-auto get_input() {
-    std::list<std::pair<int, int>> ret;
-    int p, q;
-    while (std::cin >> p >> q) {
-        ret.emplace_back(p, q);
-    }
-
-    return ret;
-}
 
 int main() {
     typedef std::list<std::pair<int, int>> Input;

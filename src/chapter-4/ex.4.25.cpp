@@ -19,7 +19,8 @@ template <typename T>
 class Stack {
    private:
     struct List {
-        List(std::size_t max) : item{new T[max]}, next{new std::size_t[max]} {}
+        explicit List(std::size_t max)
+            : item{new T[max]}, next{new std::size_t[max]} {}
         ~List() {
             delete[] item;
             delete[] next;
@@ -30,7 +31,7 @@ class Stack {
     };
 
    public:
-    Stack(std::size_t max) : list_{max}, n_{0} {}
+    explicit Stack(std::size_t max) : list_{max}, n_{0} {}
     bool empty() const { return !n_; }
     void push(T v) {
         list_.item[n_] = v;
