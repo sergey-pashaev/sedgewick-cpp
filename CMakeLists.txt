@@ -16,7 +16,7 @@ if(USE_CCACHE)
   endif()
 endif()
 
-enable_testing()
+include(CTest)
 
 add_definitions(-ggdb3)
 add_definitions(-Wall)
