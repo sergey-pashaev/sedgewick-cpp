@@ -59,6 +59,7 @@ resource(ex.4.53.md)
 ex(NUMBER 4.54 FILES ex.4.54.cpp)
 ex(NUMBER 4.55 FILES ex.4.55.cpp)
 ex(NUMBER 4.56 FILES ex.4.56.cpp)
+ex(NUMBER 4.58 FILES ex.4.58.cpp)
 
 # ex test
 test(TARGET ex.4.1 TEST_SET ex.4.1)
@@ -93,3 +94,4 @@ test(TARGET ex.4.51 TEST_SET ex.4.51)
 test(TARGET ex.4.54)
 test(TARGET ex.4.55)
 test(TARGET ex.4.56)
+test(TARGET ex.4.58)
