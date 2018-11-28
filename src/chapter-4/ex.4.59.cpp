@@ -1,8 +1,8 @@
-// ex.4.58
+// ex.4.59
 
-// en: Do Exercises 4.54 and 4.55 for the FIFO queue ADT.
+// en: Do Exercise 4.56 for the FIFO queue ADT.
 
-// ru: Выполните упражнения 4.54 и 4.55 для очереди FIFO.
+// ru: Выполните упражнение 4.56 для очереди FIFO.
 
 #include <cstddef>
 #include <stdexcept>
