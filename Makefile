@@ -6,6 +6,9 @@ exercises:
 	./scripts/build.sh
 
 test:
+	./scripts/tests.sh -DUSE_KCOV=0
+
+coverage:
 	./scripts/tests.sh
 
 install-hooks:

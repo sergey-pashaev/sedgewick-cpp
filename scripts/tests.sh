@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-
-set -eu
+set -Eeuo pipefail
+IFS=$'\n\t'
 
 # go to repo root
 cd "${0%/*}/.."
 
-./scripts/build.sh
+./scripts/build.sh $@
 cd build/
 ctest -V .
