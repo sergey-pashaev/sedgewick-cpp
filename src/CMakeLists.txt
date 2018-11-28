@@ -31,7 +31,7 @@ endfunction()
 option(USE_KCOV "Use kcov if available" ON)
 if(USE_KCOV)
   find_program(KCOV_PROGRAM kcov)
-  set(KCOV_ARGS "--exclude-pattern=/usr/include,thirdparty")
+  set(KCOV_ARGS "--exclude-pattern=/usr/include,thirdparty,/usr/lib")
   set(KCOV_REPORT_PATH "/tmp/kcov")
 endif()
 
