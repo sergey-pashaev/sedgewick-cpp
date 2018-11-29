@@ -21,4 +21,4 @@ cppcheck:
 	cppcheck --xml --std=c++14 --enable=all -I./include -I./thirdparty src/ 2> cppcheck.xml
 
 memcheck:
-	./scripts/memcheck.sh
+	./scripts/memcheck.sh -DUSE_KCOV=0
