@@ -13,15 +13,15 @@
 #include <psv/random_queue.h>
 
 int main() {
-    int from = 1;
-    int to = 99;
+    std::size_t from = 1;
+    std::size_t to = 99;
     psv::RandomQueue<int> q{to};
-    for (int i = from; i <= to; ++i) {
+    for (std::size_t i = from; i <= to; ++i) {
         q.Push(i);
     }
 
-    int to_remove = 5;
-    for (int i = 0; i < to_remove; ++i) {
+    std::size_t to_remove = 5;
+    for (std::size_t i = 0; i < to_remove; ++i) {
         std::cout << q.Pop() << '\n';
     }
 
