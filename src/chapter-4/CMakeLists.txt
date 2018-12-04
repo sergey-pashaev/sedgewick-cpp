@@ -8,11 +8,13 @@ endif()
 program(NUMBER 4.5 FILES program.4.5.cpp)
 program(NUMBER 4.6 FILES program.4.6.cpp)
 program(NUMBER 4.10 FILES program.4.10.cpp)
+program(NUMBER 4.17 FILES program.4.17.cpp)
 
 # program test
 test(TARGET program.4.5 TEST_SET program.4.5)
 test(TARGET program.4.6 TEST_SET program.4.6)
 test(TARGET program.4.10 TEST_SET program.4.10)
+test(TARGET program.4.17 TEST_SET program.4.17)
 
 # ex
 ex(NUMBER 4.1 FILES ex.4.1.cpp)
