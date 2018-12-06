@@ -58,4 +58,4 @@ script:
   - ctest -V .
 
 after_success:
-  - ./scripts/codecov.sh -s /tmp/kcov
+  - $TRAVIS_BUILD_DIR/scripts/codecov.sh -s /tmp/kcov
