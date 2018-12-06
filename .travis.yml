@@ -12,6 +12,7 @@ compiler:
 env:
   global:
     - PATH=${PATH}:${HOME}/kcov/bin
+    - CODECOV_TOKEN="e8770d8b-fe55-45b0-bd30-4c73984ef099"
   matrix:
   - TARGET_CPU=amd64
   - TARGET_CPU=x86
@@ -55,3 +56,6 @@ script:
   - cmake .. -DTARGET_CPU=$TARGET_CPU -DTRAVIS_JOB_ID=$TRAVIS_JOB_ID
   - cmake --build . -- -j2
   - ctest -V .
+
+after_success:
+  - ./scripts/codecov.sh -s /tmp/kcov
