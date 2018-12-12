@@ -68,12 +68,17 @@ class Poly {
     }
 
     friend Poly operator+(const Poly& lhs, T v) {
+        if (!v) return lhs;
         Poly ret(lhs);
         ret.AddSorted(Node(v, 0));
+        ret.RemoveZeros();
         return ret;
     }
 
-    friend Poly operator+(T v, const Poly& lhs) { return lhs + v; }
+    friend Poly operator+(T v, const Poly& lhs) {
+        if (!v) return lhs;
+        return lhs + v;
+    }
 
     friend Poly operator+(const Poly& lhs, const Poly& rhs) {
         Poly ret(lhs);
@@ -82,6 +87,7 @@ class Poly {
             ret.AddSorted(*cur);
         }
 
+        ret.RemoveZeros();
         return ret;
     }
 
@@ -94,16 +100,19 @@ class Poly {
             }
         }
 
+        ret.RemoveZeros();
         return ret;
     }
 
     friend Poly operator*(const Poly& lhs, T v) {
         Poly ret;
+        if (!v) return ret;
 
         for (Node* l = lhs.head_; l; l = l->next) {
             ret.AddSorted(Node(l->v * v, l->exp));
         }
 
+        ret.RemoveZeros();
         return ret;
     }
 
@@ -125,22 +134,7 @@ class Poly {
             if (node.exp < before->exp) break;
 
             if (node.exp == before->exp) {
-                // TODO: delete zero node
                 before->v += node.v;
-                // if (!before->v) {
-                //     if (prev) {
-                //         Node* next = before->next;
-                //         delete before;
-                //         prev->next = next;
-                //         before = prev;
-                //         continue;
-                //     } else {
-                //         Node* next = before->next;
-                //         delete before;
-                //         before = nullptr;
-                //     }
-                //     return;
-                // }
                 return;
             }
         }
@@ -149,6 +143,25 @@ class Poly {
             after->next = new Node(node.v, node.exp, nullptr);
         } else {
             head_ = new Node(node.v, node.exp, before);
+        }
+    }
+
+    void RemoveZeros() {
+        Node* cur = head_;
+        Node* prev = nullptr;
+        while (cur) {
+            Node* next = cur->next;
+            if (!cur->v) {
+                delete cur;
+                if (prev) {
+                    prev->next = next;
+                } else {
+                    head_ = next;
+                }
+            }
+
+            prev = cur;
+            cur = next;
         }
     }
 
@@ -168,21 +181,28 @@ class Poly {
 
 template <typename U>
 std::ostream& operator<<(std::ostream& os, const Poly<U>& p) {
+    if (!p.head_) {
+        os << 0;
+        return os;
+    }
+
+    os << std::showpos;
     for (auto cur = p.head_; cur; cur = cur->next) {
-        if (cur->v == 0) {
-            os << "+0";
-        } else if (cur->exp == 0) {
-            os << cur->v;
-        } else if (cur->exp == 1) {
-            os << cur->v << 'x';
-        } else {
-            os << std::showpos << cur->v << "x^" << cur->exp;
+        os << cur->v;
+
+        if (cur->exp > 0) {
+            os << 'x';
+            if (cur->exp != 1) {
+                os << '^' << std::noshowpos << cur->exp << std::showpos;
+            }
         }
 
         if (cur->next) {
             os << ' ';
         }
     }
+
+    os << std::noshowpos;
 
     return os;
 }
@@ -206,7 +226,7 @@ TEST_CASE("polynomial multiply") {
     Poly<double> x2(1, 2);
     Poly<double> x(1, 1);
 
-    Poly<double> l = 1 + (-1) * x + 0.5 * x2 + (-1.0 / 6.0) * x3;
+    Poly<double> l = 1 + (-1.0) * x + 0.5 * x2 + (-1.0 / 6.0) * x3;
     Poly<double> r = 1 + x + x2 + x3;
 
     Poly<double> p = l * r;
@@ -220,4 +240,6 @@ TEST_CASE("polynomial multiply") {
     for (double v = 0.0; v < 15.0; v += 1.0) {
         REQUIRE(Approx(f(v)) == p.Eval(v));
     }
+
+    REQUIRE(Approx(0.0) == (p * 0.0).Eval(1.0));
 }
