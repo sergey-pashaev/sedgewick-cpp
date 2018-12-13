@@ -73,6 +73,7 @@ ex(NUMBER 4.75 FILES ex.4.75.cpp)
 ex(NUMBER 4.78 FILES ex.4.78.cpp)
 ex(NUMBER 4.79 FILES ex.4.79.cpp)
 ex(NUMBER 4.80 FILES ex.4.80.cpp)
+ex(NUMBER 4.81 FILES ex.4.81.cpp)
 
 # ex test
 test(TARGET ex.4.1 TEST_SET ex.4.1)
@@ -119,3 +120,4 @@ test(TARGET ex.4.75)
 test(TARGET ex.4.78)
 test(TARGET ex.4.79)
 test(TARGET ex.4.80)
+test(TARGET ex.4.81)
