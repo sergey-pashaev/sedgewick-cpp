@@ -102,6 +102,8 @@ std::ostream& operator<<(std::ostream& os, const Poly<U>& p) {
 
     os << std::showpos;
     for (int i = 0; i < p.n_; ++i) {
+        if (!p.a_[i]) continue;
+
         os << p.a_[i];
 
         if (i > 0) {
