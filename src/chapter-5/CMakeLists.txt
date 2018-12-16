@@ -10,6 +10,9 @@ endif()
 
 # ex
 ex(NUMBER 5.1 FILES ex.5.1.cpp)
+ex(NUMBER 5.2 FILES ex.5.2.cpp)
+resource(ex.5.2.md)
 
 # ex test
 test(TARGET ex.5.1)
+test(TARGET ex.5.2 TEST_SET ex.5.2)
