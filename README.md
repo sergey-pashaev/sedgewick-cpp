@@ -12,6 +12,7 @@ I use the russian translation of the book, so the entire text of the exercises w
   * [Chapter 1: Introduction](./src/chapter-1/README.md)
   * [Chapter 3: Elementary Data Structures](./src/chapter-3/README.md)
   * [Chapter 4: Abstract Data Types](./src/chapter-4/README.md)
+  * [Chapter 5: Recursion and Trees](./src/chapter-5/README.md)
 
 ## install git hooks
 
