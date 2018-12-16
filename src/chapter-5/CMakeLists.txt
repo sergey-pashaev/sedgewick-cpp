@@ -5,6 +5,7 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
 endif()
 
 # program
+program(NUMBER 5.2 FILES program.5.2.cpp)
 
 # program test
 
@@ -12,6 +13,7 @@ endif()
 ex(NUMBER 5.1 FILES ex.5.1.cpp)
 ex(NUMBER 5.2 FILES ex.5.2.cpp)
 resource(ex.5.2.md)
+resource(ex.5.3.md)
 
 # ex test
 test(TARGET ex.5.1)
