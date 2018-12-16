@@ -9,5 +9,7 @@ endif()
 # program test
 
 # ex
+ex(NUMBER 5.1 FILES ex.5.1.cpp)
 
 # ex test
+test(TARGET ex.5.1)

@@ -1,6 +1,6 @@
 # Chapter 5: Recursion and Trees
 
-- [ ] 5.1 ▷
+- [x] [5.1 ▷](./ex.5.1.cpp)
 - [ ] 5.2
 - [ ] 5.3 ▷
 - [ ] 5.4 ●
