@@ -17,9 +17,12 @@ resource(ex.5.3.md)
 ex(NUMBER 5.4 FILES ex.5.4.cpp)
 resource(ex.5.4.md)
 ex(NUMBER 5.5 FILES ex.5.5.cpp)
+ex(NUMBER 5.6 FILES ex.5.6.cpp)
+resource(ex.5.6.md)
 
 # ex test
 test(TARGET ex.5.1)
 test(TARGET ex.5.2 TEST_SET ex.5.2)
 test(TARGET ex.5.4)
 test(TARGET ex.5.5)
+test(TARGET ex.5.6 TEST_SET ex.5.6)
