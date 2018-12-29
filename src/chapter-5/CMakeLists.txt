@@ -19,6 +19,7 @@ resource(ex.5.4.md)
 ex(NUMBER 5.5 FILES ex.5.5.cpp)
 ex(NUMBER 5.6 FILES ex.5.6.cpp)
 resource(ex.5.6.md)
+resource(ex.5.7.md)
 ex(NUMBER 5.8 FILES ex.5.8.cpp)
 resource(ex.5.8.md)
 
