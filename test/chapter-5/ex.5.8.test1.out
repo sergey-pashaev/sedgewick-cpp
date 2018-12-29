@@ -1,0 +1,17 @@
+eval() * + 7 * * 4 6 + 8 9 5
+  eval() + 7 * * 4 6 + 8 9
+    eval() 7
+    eval() * * 4 6 + 8 9
+      eval() * 4 6
+        eval() 4
+        eval() 6
+        return 24 = 4*6
+      eval() + 8 9
+        eval() 8
+        eval() 9
+        return 17 = 8+9
+      return 408 = 24*17
+    return 415 = 7+408
+  eval() 5
+  return 2075 = 415*5
+2075
