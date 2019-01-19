@@ -27,6 +27,7 @@ ex(NUMBER 5.14 FILES ex.5.14.cpp)
 ex(NUMBER 5.16 FILES ex.5.16.cpp)
 ex(NUMBER 5.17 FILES ex.5.17.cpp)
 ex(NUMBER 5.18 FILES ex.5.18.cpp)
+ex(NUMBER 5.19 FILES ex.5.19.cpp NO_UNIT_TESTS)
 
 # ex test
 test(TARGET ex.5.1)
