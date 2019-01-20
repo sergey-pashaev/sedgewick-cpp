@@ -24,7 +24,7 @@ T max(T a[], int l, int r) {
         return a[l];
     }
     const int size = r - l + 1;
-    const int k = std::pow(2, std::ceil(std::log10(size)) - 1);
+    const int k = std::pow(2, std::ceil(std::log2(size)) - 1);
     T u = max(a, l, l + k - 1);
     T v = max(a, l + k, r);
     --deep;
