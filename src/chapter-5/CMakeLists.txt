@@ -7,6 +7,7 @@ endif()
 # program
 program(NUMBER 5.2 FILES program.5.2.cpp)
 program(NUMBER 5.12 FILES program.5.12.cpp)
+program(NUMBER 5.13 FILES program.5.13.cpp)
 
 # program test
 
