@@ -4,18 +4,16 @@
 
 // ru: Напишите рекурсивную программу вычисления lg(N!).
 
-#include <cassert>
 #include <cmath>
 
 #include <catch.hpp>
 
-int factorial(int n) {
-    assert(n >= 0);
-    if (!n) return 1;
-    return n * factorial(n - 1);
-}
+// lg(n!) = lg(n * n-1 * ... 2 * 1) = lg(n) + lg(n-1) * ... * lg(2) + lg(1)
 
-double f(int n) { return std::log2(factorial(n)); }
+double f(int n) {
+    if (n < 1) return 0;
+    return std::log2(n) + f(n - 1);
+}
 
 TEST_CASE("log of factorial") {
     REQUIRE(Approx(0.0) == f(0));
