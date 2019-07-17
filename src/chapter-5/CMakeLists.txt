@@ -34,7 +34,7 @@ ex(NUMBER 5.22 FILES ex.5.22.cpp)
 
 # ex test
 test(TARGET ex.5.1)
-test(TARGET ex.5.2 TEST_SET ex.5.2)
+test(TARGET ex.5.2)
 test(TARGET ex.5.4)
 test(TARGET ex.5.5)
 test(TARGET ex.5.6 TEST_SET ex.5.6)
