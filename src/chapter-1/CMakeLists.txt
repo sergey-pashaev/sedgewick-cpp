@@ -16,6 +16,7 @@ test(TARGET program.connectivity)
 
 # ex
 resource(ex.1.1.md)
+resource(ex.1.2.md)
 resource(ex.1.4.md)
 resource(ex.1.5.md)
 resource(ex.1.6.md)
